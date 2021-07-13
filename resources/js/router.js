@@ -40,6 +40,11 @@ const routes = [
         component: () => setComponent("project/Invoice"),
         name: "Project Invoice",
     },
+    {
+        path: "/project/update/:id",
+        component: () => setComponent("project/Edit"),
+        name: "Project Update",
+    },
 
 ];
 

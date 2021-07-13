@@ -21,6 +21,30 @@ class ProjectController extends Controller
         $project = Project::FindorFail($request->id);
         return response()->json( $project);
     }
+    public function updateProject(Request $request){
+        $project= Project::where('id',$request->id)->update([
+            'groom_name'=>$request->name,
+            'bride_name'=>$request->b_name,
+            'date'=>$request->date,
+            'time'=>$request->time,
+            'drone'=>$request->drone,
+            'location'=>$request->location,
+            'city'=>$request->city,
+            'state'=>$request->state,
+            'zip_code'=>$request->zip_code,
+            'hours'=>$request->hours,
+            'attendees'=>$request->attendees,
+            'video_exp'=>$request->video_exp,
+            'flim_length'=>$request->flim_length,
+            'documentary_edit'=>$request->documentary_edit,
+            'no_videograp'=>$request->no_videograp,
+            'description'=>$request->description,
+            'user_id'=>$request->user_id,
+            'total'=>$request->total,
+            'title'=>$request->title,
+        ]);
+        return response()->json($project);
+    }
     public function storeProject(Request $request){
 
 

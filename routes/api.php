@@ -27,6 +27,7 @@ Route::prefix('user')->group(function () {
 });
 
 Route::post('/create/project',[ProjectController::class,'storeProject']);
+Route::post('/update/project',[ProjectController::class,'updateProject']);
 Route::get('/projects',[ProjectController::class,'getProjects']);
 Route::get('/project/{id}',[ProjectController::class,'getProject']);
 

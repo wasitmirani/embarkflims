@@ -66,6 +66,7 @@
                                     <th>Hours</th>
                                     <th>Date/Time</th>
                                     <th>Attendees</th>
+                                    <th>Action</th>
                                     <th>Total</th>
                                 </tr>
                                 </thead>
@@ -81,7 +82,10 @@
 
                                     <td>{{project.hours	}}</td>
                                     <td>{{project.date + " "+project.time}}</td>
+
                                     <td>{{project.attendees}}</td>
+                                     <td><a role="button" @click="goupdate">edit</a></td>
+
                                 </tr>
                                 </tbody>
                                 <tfoot>
@@ -124,6 +128,9 @@ export default {
     this.getProject();
     },
     methods: {
+        goupdate(){
+               this.$router.push(`/project/update/${this.$route.params.id}`)
+        },
         printdata(){
              console.log(this.$route.params.id);
             window.print();

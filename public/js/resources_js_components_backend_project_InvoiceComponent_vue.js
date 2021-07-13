@@ -125,6 +125,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -136,6 +140,9 @@ __webpack_require__.r(__webpack_exports__);
     this.getProject();
   },
   methods: {
+    goupdate: function goupdate() {
+      this.$router.push("/project/update/".concat(this.$route.params.id));
+    },
     printdata: function printdata() {
       console.log(this.$route.params.id);
       window.print();
@@ -314,7 +321,18 @@ var render = function() {
                             )
                           ]),
                           _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(_vm.project.attendees))])
+                          _c("td", [_vm._v(_vm._s(_vm.project.attendees))]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _c(
+                              "a",
+                              {
+                                attrs: { role: "button" },
+                                on: { click: _vm.goupdate }
+                              },
+                              [_vm._v("edit")]
+                            )
+                          ])
                         ])
                       ]),
                       _vm._v(" "),
@@ -516,6 +534,8 @@ var staticRenderFns = [
         _c("th", [_vm._v("Date/Time")]),
         _vm._v(" "),
         _c("th", [_vm._v("Attendees")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Action")]),
         _vm._v(" "),
         _c("th", [_vm._v("Total")])
       ])

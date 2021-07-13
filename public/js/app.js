@@ -2028,6 +2028,12 @@ var routes = [{
     return setComponent("project/Invoice");
   },
   name: "Project Invoice"
+}, {
+  path: "/project/update/:id",
+  component: function component() {
+    return setComponent("project/Edit");
+  },
+  name: "Project Update"
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__.default({
   routes: routes,
@@ -60311,6 +60317,16 @@ var map = {
 		9,
 		"resources_js_components_backend_error_404Component_vue"
 	],
+	"./components/backend/project/EditComponent": [
+		"./resources/js/components/backend/project/EditComponent.vue",
+		9,
+		"resources_js_components_backend_project_EditComponent_vue"
+	],
+	"./components/backend/project/EditComponent.vue": [
+		"./resources/js/components/backend/project/EditComponent.vue",
+		9,
+		"resources_js_components_backend_project_EditComponent_vue"
+	],
 	"./components/backend/project/InvoiceComponent": [
 		"./resources/js/components/backend/project/InvoiceComponent.vue",
 		9,
@@ -60566,7 +60582,7 @@ module.exports = webpackAsyncContext;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_ExampleComponent_vue":1,"resources_js_components_backend_components_SearchInput_vue":1,"resources_js_components_backend_dashboard_HomeComponent_vue":1,"resources_js_components_backend_error_404Component_vue":1,"resources_js_components_backend_project_InvoiceComponent_vue":1,"resources_js_components_backend_project_ProjectsComponent_vue":1,"resources_js_components_backend_role_RolesComponent_vue":1,"resources_js_components_backend_service_ServiceForm_vue":1,"resources_js_components_backend_service_ServiceTableComponent_vue":1,"resources_js_components_backend_service_ServicesComponent_vue":1,"resources_js_components_backend_user_UserForm_vue":1,"resources_js_components_backend_user_UserTable_vue":1,"resources_js_components_backend_user_UsersComponent_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_ExampleComponent_vue":1,"resources_js_components_backend_components_SearchInput_vue":1,"resources_js_components_backend_dashboard_HomeComponent_vue":1,"resources_js_components_backend_error_404Component_vue":1,"resources_js_components_backend_project_EditComponent_vue":1,"resources_js_components_backend_project_InvoiceComponent_vue":1,"resources_js_components_backend_project_ProjectsComponent_vue":1,"resources_js_components_backend_role_RolesComponent_vue":1,"resources_js_components_backend_service_ServiceForm_vue":1,"resources_js_components_backend_service_ServiceTableComponent_vue":1,"resources_js_components_backend_service_ServicesComponent_vue":1,"resources_js_components_backend_user_UserForm_vue":1,"resources_js_components_backend_user_UserTable_vue":1,"resources_js_components_backend_user_UsersComponent_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
