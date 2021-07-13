@@ -118,6 +118,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -287,11 +294,17 @@ var render = function() {
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(_vm.project.bride_name))]),
                           _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(_vm.project.equipments))]),
+                          _c("td", [_vm._v(_vm._s(_vm.project.video_exp))]),
                           _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(_vm.project.lenses))]),
+                          _c("td", [_vm._v(_vm._s(_vm.project.no_videograp))]),
                           _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(_vm.project.cameras))]),
+                          _c("td", [_vm._v(_vm._s(_vm.project.drone))]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(_vm._s(_vm.project.documentary_edit))
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(_vm.project.flim_length))]),
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(_vm.project.hours))]),
                           _vm._v(" "),
@@ -305,7 +318,19 @@ var render = function() {
                         ])
                       ]),
                       _vm._v(" "),
-                      _vm._m(3)
+                      _c("tfoot", [
+                        _c("tr", [
+                          _c("td"),
+                          _vm._v(" "),
+                          _c("td", { attrs: { colspan: "9" } }),
+                          _vm._v(" "),
+                          _c("td", [
+                            _c("strong", [
+                              _vm._v("$" + _vm._s(_vm.project.total))
+                            ])
+                          ])
+                        ])
+                      ])
                     ])
                   ]),
                   _vm._v(" "),
@@ -476,11 +501,15 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Bride Name")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Equipments")]),
+        _c("th", [_vm._v("Videographers")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Lenses")]),
+        _c("th", [_vm._v("Cinematographer")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Cameras")]),
+        _c("th", [_vm._v("Drone")]),
+        _vm._v(" "),
+        _c("th", [_vm._v(" Add documentary edit")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Flim Length")]),
         _vm._v(" "),
         _c("th", [_vm._v("Hours")]),
         _vm._v(" "),
@@ -489,20 +518,6 @@ var staticRenderFns = [
         _c("th", [_vm._v("Attendees")]),
         _vm._v(" "),
         _c("th", [_vm._v("Total")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tfoot", [
-      _c("tr", [
-        _c("td"),
-        _vm._v(" "),
-        _c("td", { attrs: { colspan: "7" } }),
-        _vm._v(" "),
-        _c("td", [_c("strong", [_vm._v("$55")])])
       ])
     ])
   }

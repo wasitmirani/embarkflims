@@ -276,10 +276,85 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   computed: {
     setBride: function setBride() {
       this.title = "EW-" + this.name + " " + this.b_name;
+    },
+    getRates: function getRates() {
+      if (this.video_exp.length > 0) {
+        this.total = this.video_exp * this.video_exp_rate * this.hours;
+      }
+
+      if (this.no_videograp.length > 0) {
+        this.total = this.no_videograp * this.cinematographer_rate * this.hours;
+      }
+
+      switch (this.drone) {
+        case "yes":
+          this.total = this.total + this.drone_rate;
+          break;
+
+        default:
+          break;
+      }
+
+      switch (this.documentary_edit) {
+        case "yes":
+          this.total = this.total + this.documentary_edit_rate;
+          break;
+
+        default:
+          break;
+      }
+
+      switch (this.flim_length) {
+        case "(3 Minutes) - $300":
+          this.total = this.total + 300;
+          break;
+
+        case "(5 Minutes) - $400":
+          this.total = this.total + 400;
+          break;
+
+        case "(8 Minutes) - $500":
+          this.total = this.total + 500;
+          break;
+
+        default:
+          break;
+      }
     }
   },
   data: function data() {
@@ -288,55 +363,28 @@ __webpack_require__.r(__webpack_exports__);
       equipments: [],
       projects: {},
       newproject: {},
-      equipments_list: [{
-        name: "Drone",
-        value: 1
-      }, {
-        name: "Gimbal",
-        value: 2
-      }, {
-        name: "Monopod",
-        value: 3
-      }, {
-        name: "Tripod",
-        value: 4
-      }, {
-        name: "Wireless Lavalier Mic",
-        value: 5
-      }, {
-        name: "External Audio Recorder",
-        value: 6
-      }],
-      lenses: [],
-      lenses_list: [{
-        name: "16-35mm f1.8 (or lower)",
-        value: 1
-      }, {
-        name: "50mm f1.8 (or lower)",
-        value: 2
-      }, {
-        name: "85mm f1.8 (or lower)",
-        value: 3
-      }, {
-        name: "70-200mm (f4) or lower)",
-        value: 4
-      }, {
-        name: "18-105mm f4 (or lower)",
-        value: 5
-      }],
-      name: "",
       title: "",
       b_name: "",
       date: null,
       time: null,
       cameras: null,
       location: null,
+      no_videograp: 0,
       city: null,
       state: null,
       zip_code: null,
-      hours: null,
+      hours: 1,
       attendees: 0,
       description: null,
+      video_exp: 0,
+      drone: "",
+      video_exp_rate: 50,
+      cinematographer_rate: 80,
+      drone_rate: 150,
+      documentary_edit_rate: 150,
+      total: 0,
+      flim_length: "",
+      documentary_edit: "",
       rates_list: [{
         name: "$0 - $50",
         value: 1
@@ -378,21 +426,18 @@ __webpack_require__.r(__webpack_exports__);
       formdata.append("b_name", this.b_name);
       formdata.append("date", this.date);
       formdata.append("time", this.time);
-      formdata.append("cameras", this.cameras);
       formdata.append("location", this.location);
       formdata.append("city", this.city);
       formdata.append("state", this.state);
       formdata.append("zip_code", this.zip_code);
       formdata.append("hours", this.hours);
-      var equipments_ = this.equipments.map(function (item) {
-        return item.name;
-      });
-      var lenses_ = this.lenses.map(function (item) {
-        return item.name;
-      });
+      formdata.append("video_exp", this.video_exp);
+      formdata.append("total", this.total);
+      formdata.append("no_videograp", this.no_videograp);
+      formdata.append("drone", this.drone);
+      formdata.append("flim_length", this.flim_length);
+      formdata.append("documentary_edit", this.documentary_edit);
       formdata.append("attendees", this.attendees);
-      formdata.append("equipments", equipments_);
-      formdata.append("lenses", lenses_);
       formdata.append("description", this.description);
       formdata.append("user_id", user.id);
       axios.post("/create/project", formdata).then(function (res) {
@@ -697,11 +742,11 @@ var render = function() {
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(item.bride_name))]),
                           _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(item.equipments))]),
+                          _c("td", [_vm._v(_vm._s(item.drone))]),
                           _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(item.lenses))]),
+                          _c("td", [_vm._v(_vm._s(item.no_videograp))]),
                           _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(item.cameras))]),
+                          _c("td", [_vm._v(_vm._s(item.video_exp))]),
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(item.hours))]),
                           _vm._v(" "),
@@ -759,6 +804,7 @@ var render = function() {
                     "form",
                     {
                       staticClass: "card",
+                      attrs: { state: _vm.getRates },
                       on: {
                         submit: function($event) {
                           $event.preventDefault()
@@ -982,6 +1028,8 @@ var render = function() {
                                 staticClass: "form-control",
                                 attrs: {
                                   type: "number",
+                                  min: "4",
+                                  max: "12",
                                   placeholder: "Hour's"
                                 },
                                 domProps: { value: _vm.hours },
@@ -1000,120 +1048,240 @@ var render = function() {
                           _c("div", { staticClass: "col-sm-6 col-md-4" }, [
                             _c("div", { staticClass: "form-group" }, [
                               _c("label", { staticClass: "form-label" }, [
-                                _vm._v("Cameras")
+                                _vm._v("Videographers")
                               ]),
                               _vm._v(" "),
-                              _c(
-                                "select",
-                                {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.cameras,
-                                      expression: "cameras"
-                                    }
-                                  ],
-                                  staticClass: "form-control custom-select",
-                                  attrs: { name: "beast", id: "select-beast" },
-                                  on: {
-                                    change: function($event) {
-                                      var $$selectedVal = Array.prototype.filter
-                                        .call($event.target.options, function(
-                                          o
-                                        ) {
-                                          return o.selected
-                                        })
-                                        .map(function(o) {
-                                          var val =
-                                            "_value" in o ? o._value : o.value
-                                          return val
-                                        })
-                                      _vm.cameras = $event.target.multiple
-                                        ? $$selectedVal
-                                        : $$selectedVal[0]
-                                    }
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.video_exp,
+                                    expression: "video_exp"
                                   }
+                                ],
+                                staticClass: "form-control",
+                                attrs: {
+                                  type: "number",
+                                  placeholder: "No of Videographers"
                                 },
-                                [
-                                  _c("option", { attrs: { value: "1" } }, [
-                                    _vm._v("One Camera")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("option", { attrs: { value: "2" } }, [
-                                    _vm._v("Two Cameras")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("option", { attrs: { value: "3" } }, [
-                                    _vm._v("Three Cameras")
-                                  ])
-                                ]
-                              )
+                                domProps: { value: _vm.video_exp },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.video_exp = $event.target.value
+                                  }
+                                }
+                              })
                             ])
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "col-sm-6 col-md-4" }, [
-                            _c(
-                              "div",
-                              { staticClass: "form-group" },
-                              [
-                                _c("label", { staticClass: "form-label" }, [
-                                  _vm._v("Equipments")
-                                ]),
-                                _vm._v(" "),
-                                _c("multiselect", {
-                                  attrs: {
-                                    "tag-placeholder": "Add this as new tag",
-                                    placeholder: "Search or add a tag",
-                                    label: "name",
-                                    "track-by": "name",
-                                    options: _vm.equipments_list,
-                                    multiple: true,
-                                    taggable: true
-                                  },
-                                  model: {
-                                    value: _vm.equipments,
-                                    callback: function($$v) {
-                                      _vm.equipments = $$v
-                                    },
-                                    expression: "equipments"
+                            _c("div", { staticClass: "form-group" }, [
+                              _c("label", { staticClass: "form-label" }, [
+                                _vm._v("Cinematographer")
+                              ]),
+                              _vm._v(" "),
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.no_videograp,
+                                    expression: "no_videograp"
                                   }
-                                })
-                              ],
-                              1
-                            )
+                                ],
+                                staticClass: "form-control",
+                                attrs: {
+                                  type: "number",
+                                  placeholder: "No of Cinematographer"
+                                },
+                                domProps: { value: _vm.no_videograp },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.no_videograp = $event.target.value
+                                  }
+                                }
+                              })
+                            ])
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "col-sm-6 col-md-4" }, [
-                            _c(
-                              "div",
-                              { staticClass: "form-group" },
-                              [
-                                _c("label", { staticClass: "form-label" }, [
-                                  _vm._v("Lenses")
+                            _c("div", { staticClass: "form-group" }, [
+                              _c("div", { staticClass: "form-group" }, [
+                                _c("label", { attrs: { for: "" } }, [
+                                  _vm._v("Select flim length")
                                 ]),
                                 _vm._v(" "),
-                                _c("multiselect", {
-                                  attrs: {
-                                    "tag-placeholder": "Add this as new tag",
-                                    placeholder: "Search or add a tag",
-                                    label: "name",
-                                    "track-by": "name",
-                                    options: _vm.lenses_list,
-                                    multiple: true,
-                                    taggable: true
+                                _c(
+                                  "select",
+                                  {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.flim_length,
+                                        expression: "flim_length"
+                                      }
+                                    ],
+                                    staticClass: "custom-select",
+                                    on: {
+                                      change: function($event) {
+                                        var $$selectedVal = Array.prototype.filter
+                                          .call($event.target.options, function(
+                                            o
+                                          ) {
+                                            return o.selected
+                                          })
+                                          .map(function(o) {
+                                            var val =
+                                              "_value" in o ? o._value : o.value
+                                            return val
+                                          })
+                                        _vm.flim_length = $event.target.multiple
+                                          ? $$selectedVal
+                                          : $$selectedVal[0]
+                                      }
+                                    }
                                   },
-                                  model: {
-                                    value: _vm.lenses,
-                                    callback: function($$v) {
-                                      _vm.lenses = $$v
-                                    },
-                                    expression: "lenses"
-                                  }
-                                })
-                              ],
-                              1
-                            )
+                                  [
+                                    _c(
+                                      "option",
+                                      {
+                                        attrs: { value: "(3 Minutes) - $300" }
+                                      },
+                                      [_vm._v("3 Minutes")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "option",
+                                      {
+                                        attrs: { value: "(5 Minutes) - $400" }
+                                      },
+                                      [_vm._v("5 Minutes")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "option",
+                                      {
+                                        attrs: { value: "(8 Minutes) - $500" }
+                                      },
+                                      [_vm._v("8 Minutes")]
+                                    )
+                                  ]
+                                )
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-sm-6 col-md-6" }, [
+                            _c("div", { staticClass: "form-group" }, [
+                              _c("div", { staticClass: "form-group" }, [
+                                _c("label", { attrs: { for: "" } }, [
+                                  _vm._v("Select Drone")
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "select",
+                                  {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.drone,
+                                        expression: "drone"
+                                      }
+                                    ],
+                                    staticClass: "custom-select",
+                                    on: {
+                                      change: function($event) {
+                                        var $$selectedVal = Array.prototype.filter
+                                          .call($event.target.options, function(
+                                            o
+                                          ) {
+                                            return o.selected
+                                          })
+                                          .map(function(o) {
+                                            var val =
+                                              "_value" in o ? o._value : o.value
+                                            return val
+                                          })
+                                        _vm.drone = $event.target.multiple
+                                          ? $$selectedVal
+                                          : $$selectedVal[0]
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _c("option", { attrs: { value: "yes" } }, [
+                                      _vm._v("Yes")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("option", { attrs: { value: "no" } }, [
+                                      _vm._v("No")
+                                    ])
+                                  ]
+                                )
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-sm-6 col-md-6" }, [
+                            _c("div", { staticClass: "form-group" }, [
+                              _c("div", { staticClass: "form-group" }, [
+                                _c("label", { attrs: { for: "" } }, [
+                                  _vm._v("Add documentary edit ")
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "select",
+                                  {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.documentary_edit,
+                                        expression: "documentary_edit"
+                                      }
+                                    ],
+                                    staticClass: "custom-select",
+                                    on: {
+                                      change: function($event) {
+                                        var $$selectedVal = Array.prototype.filter
+                                          .call($event.target.options, function(
+                                            o
+                                          ) {
+                                            return o.selected
+                                          })
+                                          .map(function(o) {
+                                            var val =
+                                              "_value" in o ? o._value : o.value
+                                            return val
+                                          })
+                                        _vm.documentary_edit = $event.target
+                                          .multiple
+                                          ? $$selectedVal
+                                          : $$selectedVal[0]
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _c("option", { attrs: { value: "yes" } }, [
+                                      _vm._v("Yes")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("option", { attrs: { value: "no" } }, [
+                                      _vm._v("No")
+                                    ])
+                                  ]
+                                )
+                              ])
+                            ])
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "col-md-12" }, [
@@ -1293,6 +1461,16 @@ var render = function() {
                         ])
                       ]),
                       _vm._v(" "),
+                      _c("div", { staticClass: "float-right mt-2" }, [
+                        _vm.total > 0
+                          ? _c("div", { staticClass: "float-right " }, [
+                              _c("i", { staticClass: "fa fa-shopping-cart" }),
+                              _vm._v(" "),
+                              _c("h4", [_vm._v("$" + _vm._s(_vm.total))])
+                            ])
+                          : _vm._e()
+                      ]),
+                      _vm._v(" "),
                       _vm._m(8)
                     ]
                   )
@@ -1427,11 +1605,11 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Bride Name")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Equipments")]),
+        _c("th", [_vm._v("Drone")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Lenses")]),
+        _c("th", [_vm._v("Videographers")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Cameras")]),
+        _c("th", [_vm._v("Cinematographer")]),
         _vm._v(" "),
         _c("th", [_vm._v("Hours")]),
         _vm._v(" "),

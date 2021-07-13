@@ -13,8 +13,6 @@ class ProjectController extends Controller
         $projects = Project::orderBy('groom_name', 'ASC')
         ->where('groom_name', 'like', '%' . $query . '%')
         ->orWhere('bride_name', 'like', '%' . $query . '%')
-        ->orWhere('equipments', 'like', '%' . $query . '%')
-        ->orWhere('lenses', 'like', '%' . $query . '%')
         ->paginate(env('PER_PAGE'));
 
         return response()->json(['projects'=>$projects]);
@@ -31,17 +29,20 @@ class ProjectController extends Controller
             'bride_name'=>$request->b_name,
             'date'=>$request->date,
             'time'=>$request->time,
-            'cameras'=>$request->cameras,
+            'drone'=>$request->drone,
             'location'=>$request->location,
             'city'=>$request->city,
             'state'=>$request->state,
             'zip_code'=>$request->zip_code,
             'hours'=>$request->hours,
             'attendees'=>$request->attendees,
-            'equipments'=>$request->equipments,
-            'lenses'=>$request->lenses,
+            'video_exp'=>$request->video_exp,
+            'flim_length'=>$request->flim_length,
+            'documentary_edit'=>$request->documentary_edit,
+            'no_videograp'=>$request->no_videograp,
             'description'=>$request->description,
             'user_id'=>$request->user_id,
+            'total'=>$request->total,
             'title'=>$request->title,
         ]);
 

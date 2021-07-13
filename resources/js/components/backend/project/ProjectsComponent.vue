@@ -76,9 +76,9 @@
                            <th class="w40">#</th>
                            <th>Groom Name</th>
                            <th>Bride Name</th>
-                           <th>Equipments</th>
-                           <th>Lenses</th>
-                           <th>Cameras</th>
+                           <th>Drone</th>
+                           <th>Videographers</th>
+                           <th>Cinematographer</th>
                            <th>Hours</th>
                           <th>Date</th>
                            <th>Time</th>
@@ -97,9 +97,9 @@
                            </td>
                           <td>{{item.groom_name}}</td>
                            <td>{{item.bride_name}}</td>
-                           <td>{{item.equipments}}</td>
-                           <td>{{item.lenses}}</td>
-                           <td>{{item.cameras}}</td>
+                           <td>{{item.drone}}</td>
+                           <td>{{item.no_videograp}}</td>
+                           <td>{{item.video_exp}}</td>
                            <td>{{item.hours}}</td>
                           <td>{{item.date}}</td>
                            <td>{{item.time}}</td>
@@ -135,7 +135,7 @@
       </div>
       <div class="modal-body">
             <div class="col-lg-12">
-<form class="card"  v-on:submit.prevent="onSubmit">
+<form class="card"  v-on:submit.prevent="onSubmit"  :state="getRates">
    <div class="card-body">
       <!-- <h3 class="card-title">Edit Profile</h3> -->
       <div class="row">
@@ -180,30 +180,57 @@
          <div class="col-sm-6 col-md-4">
             <div class="form-group">
                <label class="form-label">Hour's</label>
-               <input type="number" class="form-control" v-model="hours" placeholder="Hour's" >
+               <input type="number" class="form-control" min="4" max="12" v-model="hours" placeholder="Hour's" >
             </div>
          </div>
           <div class="col-sm-6 col-md-4">
             <div class="form-group">
-               <label class="form-label">Cameras</label>
-                <select name="beast" id="select-beast" class="form-control custom-select" v-model="cameras">
-                    <option value="1">One Camera</option>
-                    <option value="2">Two Cameras</option>
-                    <option value="3">Three Cameras</option>
-                    </select>
+               <label class="form-label">Videographers</label>
+                   <input type="number" class="form-control" v-model="video_exp" placeholder="No of Videographers" >
             </div>
          </div>
          <div class="col-sm-6 col-md-4">
             <div class="form-group">
-               <label class="form-label">Equipments</label>
-                  <multiselect v-model="equipments" tag-placeholder="Add this as new tag" placeholder="Search or add a tag" label="name" track-by="name" :options="equipments_list" :multiple="true" :taggable="true" ></multiselect>
+               <label class="form-label">Cinematographer</label>
+                  <input type="number" class="form-control" v-model="no_videograp" placeholder="No of Cinematographer" >
+            </div>
+         </div>
+              <div class="col-sm-6 col-md-4">
+            <div class="form-group">
+               <div class="form-group">
+                   <label for="">Select flim length</label>
+                   <select class="custom-select" v-model="flim_length">
+                       <option value="(3 Minutes) - $300">3 Minutes</option>
+                       <option value="(5 Minutes) - $400">5 Minutes</option>
+                       <option value="(8 Minutes) - $500">8 Minutes</option>
+                   </select>
+               </div>
 
             </div>
          </div>
-        <div class="col-sm-6 col-md-4">
+        <div class="col-sm-6 col-md-6">
             <div class="form-group">
-               <label class="form-label">Lenses</label>
-                  <multiselect v-model="lenses" tag-placeholder="Add this as new tag" placeholder="Search or add a tag" label="name" track-by="name" :options="lenses_list" :multiple="true" :taggable="true" ></multiselect>
+               <div class="form-group">
+                   <label for="">Select Drone</label>
+                   <select class="custom-select" v-model="drone">
+
+                       <option value="yes">Yes</option>
+                       <option value="no">No</option>
+                   </select>
+               </div>
+
+            </div>
+         </div>
+         <div class="col-sm-6 col-md-6">
+            <div class="form-group">
+               <div class="form-group">
+                   <label for="">Add documentary edit </label>
+                   <select class="custom-select" v-model="documentary_edit">
+
+                       <option value="yes">Yes</option>
+                       <option value="no">No</option>
+                   </select>
+               </div>
 
             </div>
          </div>
@@ -247,6 +274,10 @@
          </div>
       </div>
    </div>
+   <div class="float-right mt-2">
+       <div class="float-right " v-if="total>0"><i class="fa fa-shopping-cart"></i> <h4>${{total}}</h4> </div>
+   </div>
+
    <div class="card-footer text-right">
       <button type="submit" class="btn btn-primary">Submit</button>
    </div>
@@ -269,6 +300,45 @@ export default {
         setBride(){
 
            this.title="EW-"+this.name+" "+ this.b_name;
+        },
+        getRates(){
+            if(this.video_exp.length>0){
+
+                this.total=(this.video_exp*this.video_exp_rate)*this.hours;
+            }
+            if(this.no_videograp.length>0){
+                this.total=(this.no_videograp*this.cinematographer_rate)*this.hours;
+            }
+        switch (this.drone) {
+                case "yes":
+                      this.total=this.total+this.drone_rate;
+                    break;
+
+                default:
+                    break;
+            }
+            switch (this.documentary_edit) {
+                case "yes":
+                      this.total=this.total+this.documentary_edit_rate;
+                    break;
+                default:
+                    break;
+            }
+            switch (this.flim_length) {
+                case "(3 Minutes) - $300":
+                    this.total=this.total+300;
+                    break;
+                case "(5 Minutes) - $400":
+                    this.total=this.total+400;
+                    break;
+                case "(8 Minutes) - $500":
+                   this.total= this.total+500;
+                    break;
+                default:
+                    break;
+            }
+
+
         }
     },
     data(){
@@ -277,35 +347,30 @@ export default {
             equipments:[],
             projects:{},
             newproject:{},
-            equipments_list:[
-                  {name:"Drone",value:1},
-                  {name:"Gimbal",value:2},
-                  {name:"Monopod",value:3},
-                  {name:"Tripod",value:4},
-                  {name:"Wireless Lavalier Mic",value:5},
-                  {name:"External Audio Recorder",value:6},
-            ],
-            lenses:[],
-            lenses_list:[
-                  {name:"16-35mm f1.8 (or lower)",value:1},
-                  {name:"50mm f1.8 (or lower)",value:2},
-                  {name:"85mm f1.8 (or lower)",value:3},
-                  {name:"70-200mm (f4) or lower)",value:4},
-                  {name:"18-105mm f4 (or lower)",value:5},
-            ],
-            name:"",
             title:"",
             b_name:"",
             date:null,
             time:null,
             cameras:null,
             location:null,
+            no_videograp:0,
             city:null,
             state:null,
             zip_code:null,
-            hours:null,
+            hours:1,
             attendees:0,
             description:null,
+            video_exp:0,
+            drone:"",
+            video_exp_rate:50,
+            cinematographer_rate:80,
+            drone_rate:150,
+            documentary_edit_rate:150,
+            total:0,
+
+
+            flim_length:"",
+            documentary_edit:"",
             rates_list:[
                {name:"$0 - $50",value:1},
                {name:"$50 - $100",value:2},
@@ -327,26 +392,27 @@ export default {
         onSubmit(){
             Vue.$toast.default("Please wait data is processing",{duration:600});
            let formdata = new FormData();
-             formdata.append("title",this.title);
+            formdata.append("title",this.title);
             formdata.append("name",this.name);
             formdata.append("b_name",this.b_name);
             formdata.append("date",this.date);
             formdata.append("time",this.time);
-            formdata.append("cameras",this.cameras);
+
             formdata.append("location",this.location);
             formdata.append("city",this.city);
             formdata.append("state",this.state);
             formdata.append("zip_code",this.zip_code);
             formdata.append("hours",this.hours);
-            const equipments_=this.equipments.map((item)=>{
-                return item.name;
-            });
-             const lenses_=this.lenses.map((item)=>{
-                return item.name;
-            });
+            formdata.append("video_exp",this.video_exp);
+            formdata.append("total",this.total);
+            formdata.append("no_videograp",this.no_videograp);
+            formdata.append("drone",this.drone);
+            formdata.append("flim_length",this.flim_length);
+            formdata.append("documentary_edit",this.documentary_edit);
+
+
             formdata.append("attendees",this.attendees);
-            formdata.append("equipments",equipments_);
-            formdata.append("lenses",lenses_);
+
             formdata.append("description",this.description);
             formdata.append("user_id",user.id);
             axios.post("/create/project",formdata).then((res)=>{

@@ -56,9 +56,13 @@
 
                                     <th>Groom Name</th>
                                     <th>Bride Name</th>
-                                    <th>Equipments</th>
-                                    <th>Lenses</th>
-                                    <th>Cameras</th>
+                                    <th>Videographers</th>
+                                    <th>Cinematographer</th>
+                                    <th>Drone</th>
+                                    <th> Add documentary edit</th>
+                                    <th>Flim Length</th>
+
+
                                     <th>Hours</th>
                                     <th>Date/Time</th>
                                     <th>Attendees</th>
@@ -69,9 +73,12 @@
                                 <tr>
                                     <td>{{project.groom_name}}</td>
                                     <td>{{project.bride_name}}</td>
-                                    <td>{{project.equipments}}</td>
-                                    <td>{{project.lenses}}</td>
-                                    <td>{{project.cameras}}</td>
+                                    <td>{{project.video_exp}}</td>
+                                    <td>{{project.no_videograp}}</td>
+                                    <td>{{project.drone}}</td>
+                                    <td>{{project.documentary_edit}}</td>
+                                    <td>{{project.flim_length}}</td>
+
                                     <td>{{project.hours	}}</td>
                                     <td>{{project.date + " "+project.time}}</td>
                                     <td>{{project.attendees}}</td>
@@ -80,8 +87,8 @@
                                 <tfoot>
                                 <tr>
                                     <td></td>
-                                    <td colspan="7"></td>
-                                    <td><strong>$55</strong></td>
+                                    <td colspan="9"></td>
+                                    <td><strong>${{project.total}}</strong></td>
                                 </tr>
                                 </tfoot>
                             </table>
