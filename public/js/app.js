@@ -1892,6 +1892,29 @@ Vue.filter("timeformat", function (value) {
     return moment__WEBPACK_IMPORTED_MODULE_4___default().utc(String(value)).local().fromNow();
   }
 });
+Vue.filter("projectstatus", function (value) {
+  switch (value) {
+    case 1:
+      return "<span class='btn btn-info btn-round mr-1'>inprocess </span>";
+      break;
+
+    case 0:
+      return "<span class='btn btn-warning btn-round   mr-1'>pending </span>";
+      break;
+
+    case 2:
+      return "<span class='btn btn-success btn-round   mr-1'>completed </span>";
+      break;
+
+    case 3:
+      return "<span class='btn btn-danger btn-round   mr-1'>cancel </span>";
+      break;
+
+    default:
+      return "<span class='btn btn-warning btn-round  mr-1'>pending </span>";
+      break;
+  }
+});
 Vue.prototype.$base_url = window.location.origin;
 var app = new Vue({
   el: '#app',
@@ -2034,6 +2057,12 @@ var routes = [{
     return setComponent("project/Edit");
   },
   name: "Project Update"
+}, {
+  path: "/files",
+  component: function component() {
+    return setComponent("project/Files");
+  },
+  name: "Project Source Files"
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__.default({
   routes: routes,
@@ -60327,6 +60356,16 @@ var map = {
 		9,
 		"resources_js_components_backend_project_EditComponent_vue"
 	],
+	"./components/backend/project/FilesComponent": [
+		"./resources/js/components/backend/project/FilesComponent.vue",
+		9,
+		"resources_js_components_backend_project_FilesComponent_vue"
+	],
+	"./components/backend/project/FilesComponent.vue": [
+		"./resources/js/components/backend/project/FilesComponent.vue",
+		9,
+		"resources_js_components_backend_project_FilesComponent_vue"
+	],
 	"./components/backend/project/InvoiceComponent": [
 		"./resources/js/components/backend/project/InvoiceComponent.vue",
 		9,
@@ -60582,7 +60621,7 @@ module.exports = webpackAsyncContext;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_ExampleComponent_vue":1,"resources_js_components_backend_components_SearchInput_vue":1,"resources_js_components_backend_dashboard_HomeComponent_vue":1,"resources_js_components_backend_error_404Component_vue":1,"resources_js_components_backend_project_EditComponent_vue":1,"resources_js_components_backend_project_InvoiceComponent_vue":1,"resources_js_components_backend_project_ProjectsComponent_vue":1,"resources_js_components_backend_role_RolesComponent_vue":1,"resources_js_components_backend_service_ServiceForm_vue":1,"resources_js_components_backend_service_ServiceTableComponent_vue":1,"resources_js_components_backend_service_ServicesComponent_vue":1,"resources_js_components_backend_user_UserForm_vue":1,"resources_js_components_backend_user_UserTable_vue":1,"resources_js_components_backend_user_UsersComponent_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_ExampleComponent_vue":1,"resources_js_components_backend_components_SearchInput_vue":1,"resources_js_components_backend_dashboard_HomeComponent_vue":1,"resources_js_components_backend_error_404Component_vue":1,"resources_js_components_backend_project_EditComponent_vue":1,"resources_js_components_backend_project_FilesComponent_vue":1,"resources_js_components_backend_project_InvoiceComponent_vue":1,"resources_js_components_backend_project_ProjectsComponent_vue":1,"resources_js_components_backend_role_RolesComponent_vue":1,"resources_js_components_backend_service_ServiceForm_vue":1,"resources_js_components_backend_service_ServiceTableComponent_vue":1,"resources_js_components_backend_service_ServicesComponent_vue":1,"resources_js_components_backend_user_UserForm_vue":1,"resources_js_components_backend_user_UserTable_vue":1,"resources_js_components_backend_user_UsersComponent_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

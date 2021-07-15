@@ -45,6 +45,11 @@ const routes = [
         component: () => setComponent("project/Edit"),
         name: "Project Update",
     },
+    {
+        path: "/files",
+        component: () => setComponent("project/Files"),
+        name: "Project Source Files",
+    },
 
 ];
 

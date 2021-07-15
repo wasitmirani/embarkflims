@@ -66,6 +66,14 @@ public static function SideBar(){
                                 null,
                                 "/projects",
                             ),
+                            setSubMenu(
+                                null,
+                                "Source files",
+                                null,
+                                null,
+                                null,
+                                "/project/source/files",
+                            ),
 
                     ],
 

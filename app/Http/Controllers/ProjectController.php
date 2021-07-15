@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class ProjectController extends Controller
 {
@@ -16,6 +17,36 @@ class ProjectController extends Controller
         ->paginate(env('PER_PAGE'));
 
         return response()->json(['projects'=>$projects]);
+    }
+
+    public function getDailyProjects(Request $request){
+
+        $projects = Project::latest();
+
+        if($request->status=="null"){
+            $projects=  $projects->where('created_at', '>=', Carbon::today());
+
+        }
+
+        if($request->status=="4"){
+            $projects=  $projects->orderBy('id','desc');
+
+        }
+        else {
+            $projects=  $projects->where('status',$request->status);
+        }
+
+
+        $projects=$projects->paginate(env('PER_PAGE'));
+        $my_projects=Project::where('user_id',$request->user_id)->get();
+        $collection =collect($my_projects);
+        $total=count($my_projects);
+        $completed= $collection->where('status',2)->count();
+        $pending=$collection->where('status',0)->count();
+        $procces=$collection->where('status',1)->count();
+        $cancel=$collection->where('status',3)->count();
+
+        return response()->json(['projects'=>$projects,'total'=>$total,'completed'=>$completed,'pending'=>$pending,'cancel'=>$cancel]);
     }
     public function getProject(Request $request){
         $project = Project::FindorFail($request->id);

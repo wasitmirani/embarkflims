@@ -19,7 +19,8 @@
             <div class="col-12">
                <div class="card">
                   <div class="card-body">
-                     <div class="row">
+                      <h3>Projects List</h3>
+                     <!-- <div class="row">
                         <div class="col-lg-3 col-md-4 col-sm-6">
                            <label>Search</label>
                            <div class="input-group">
@@ -30,18 +31,7 @@
                            <label>Hourly Rate</label>
                              <multiselect v-model="rates" tag-placeholder="Add this as new tag" placeholder="Search or add a tag" label="name" track-by="name" :options="rates_list" :multiple="true" :taggable="true" ></multiselect>
                         </div>
-                        <div class="col-lg-2 col-md-4 col-sm-6">
-                           <label>Academic Degree</label>
-                           <div class="form-group">
-                              <select class="custom-select">
-                                 <option selected="">All degrees</option>
-                                 <option value="1">Associate degree</option>
-                                 <option value="2">Bachelor's degree</option>
-                                 <option value="3">Master's degree</option>
-                                 <option value="4">Doctoral degree</option>
-                              </select>
-                           </div>
-                        </div>
+
                         <div class="col-lg-2 col-md-4 col-sm-6">
                            <label>Order</label>
                            <div class="form-group">
@@ -58,7 +48,7 @@
                            <label>&nbsp;</label>
                            <a href="javascript:void(0);" class="btn btn-sm btn-primary btn-block" title="">Filter</a>
                         </div>
-                     </div>
+                     </div> -->
                   </div>
                </div>
             </div>
@@ -76,6 +66,8 @@
                            <th class="w40">#</th>
                            <th>Groom Name</th>
                            <th>Bride Name</th>
+                           <th>Total Pay</th>
+                                <th>Status</th>
                            <th>Drone</th>
                            <th>Videographers</th>
                            <th>Cinematographer</th>
@@ -97,6 +89,10 @@
                            </td>
                           <td>{{item.groom_name}}</td>
                            <td>{{item.bride_name}}</td>
+                              <td><a href="#"><h5><strong>${{item.total}}</strong></h5></a> </td>
+                           <td >
+                               <p :inner-html.prop="item.status | projectstatus"></p>
+                           </td>
                            <td>{{item.drone}}</td>
                            <td>{{item.no_videograp}}</td>
                            <td>{{item.video_exp}}</td>

@@ -303,10 +303,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   computed: {
     setBride: function setBride() {
@@ -644,51 +640,7 @@ var render = function() {
           ]
         ),
         _vm._v(" "),
-        _c("div", { staticClass: "row clearfix" }, [
-          _c("div", { staticClass: "col-12" }, [
-            _c("div", { staticClass: "card" }, [
-              _c("div", { staticClass: "card-body" }, [
-                _c("div", { staticClass: "row" }, [
-                  _vm._m(1),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-lg-3 col-md-4 col-sm-6" },
-                    [
-                      _c("label", [_vm._v("Hourly Rate")]),
-                      _vm._v(" "),
-                      _c("multiselect", {
-                        attrs: {
-                          "tag-placeholder": "Add this as new tag",
-                          placeholder: "Search or add a tag",
-                          label: "name",
-                          "track-by": "name",
-                          options: _vm.rates_list,
-                          multiple: true,
-                          taggable: true
-                        },
-                        model: {
-                          value: _vm.rates,
-                          callback: function($$v) {
-                            _vm.rates = $$v
-                          },
-                          expression: "rates"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _vm._m(2),
-                  _vm._v(" "),
-                  _vm._m(3),
-                  _vm._v(" "),
-                  _vm._m(4)
-                ])
-              ])
-            ])
-          ])
-        ])
+        _vm._m(1)
       ])
     ]),
     _vm._v(" "),
@@ -710,7 +662,7 @@ var render = function() {
                       "table table-vcenter table_custom spacing5 border-style mb-0"
                   },
                   [
-                    _vm._m(5),
+                    _vm._m(2),
                     _vm._v(" "),
                     _c(
                       "tbody",
@@ -741,6 +693,22 @@ var render = function() {
                           _c("td", [_vm._v(_vm._s(item.groom_name))]),
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(item.bride_name))]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _c("a", { attrs: { href: "#" } }, [
+                              _c("h5", [
+                                _c("strong", [_vm._v("$" + _vm._s(item.total))])
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _c("p", {
+                              domProps: {
+                                innerHTML: _vm._f("projectstatus")(item.status)
+                              }
+                            })
+                          ]),
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(item.drone))]),
                           _vm._v(" "),
@@ -796,7 +764,7 @@ var render = function() {
           { staticClass: "modal-dialog modal-xl", attrs: { role: "document" } },
           [
             _c("div", { staticClass: "modal-content" }, [
-              _vm._m(6),
+              _vm._m(3),
               _vm._v(" "),
               _c("div", { staticClass: "modal-body" }, [
                 _c("div", { staticClass: "col-lg-12" }, [
@@ -1423,7 +1391,7 @@ var render = function() {
                             ])
                           ]),
                           _vm._v(" "),
-                          _vm._m(7),
+                          _vm._m(4),
                           _vm._v(" "),
                           _c("div", { staticClass: "col-md-12" }, [
                             _c("div", { staticClass: "form-group mb-0" }, [
@@ -1471,7 +1439,7 @@ var render = function() {
                           : _vm._e()
                       ]),
                       _vm._v(" "),
-                      _vm._m(8)
+                      _vm._m(5)
                     ]
                   )
                 ])
@@ -1511,86 +1479,14 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-lg-3 col-md-4 col-sm-6" }, [
-      _c("label", [_vm._v("Search")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "input-group" }, [
-        _c("input", {
-          staticClass: "form-control",
-          attrs: { type: "text", placeholder: "Search..." }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-lg-2 col-md-4 col-sm-6" }, [
-      _c("label", [_vm._v("Academic Degree")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "form-group" }, [
-        _c("select", { staticClass: "custom-select" }, [
-          _c("option", { attrs: { selected: "" } }, [_vm._v("All degrees")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "1" } }, [_vm._v("Associate degree")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "2" } }, [
-            _vm._v("Bachelor's degree")
-          ]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "3" } }, [_vm._v("Master's degree")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "4" } }, [_vm._v("Doctoral degree")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-lg-2 col-md-4 col-sm-6" }, [
-      _c("label", [_vm._v("Order")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "form-group" }, [
-        _c("select", { staticClass: "custom-select" }, [
-          _c("option", { attrs: { selected: "" } }, [_vm._v("Relevance")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "1" } }, [
-            _vm._v("Highest rate first")
-          ]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "2" } }, [
-            _vm._v("Lowest rate first")
-          ]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "3" } }, [
-            _vm._v("Highest degree first")
-          ]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "4" } }, [
-            _vm._v("Lowest degree first")
+    return _c("div", { staticClass: "row clearfix" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c("h3", [_vm._v("Projects List")])
           ])
         ])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-lg-2 col-md-4 col-sm-6" }, [
-      _c("label", [_vm._v(" ")]),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass: "btn btn-sm btn-primary btn-block",
-          attrs: { href: "javascript:void(0);", title: "" }
-        },
-        [_vm._v("Filter")]
-      )
     ])
   },
   function() {
@@ -1604,6 +1500,10 @@ var staticRenderFns = [
         _c("th", [_vm._v("Groom Name")]),
         _vm._v(" "),
         _c("th", [_vm._v("Bride Name")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Total Pay")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Status")]),
         _vm._v(" "),
         _c("th", [_vm._v("Drone")]),
         _vm._v(" "),
