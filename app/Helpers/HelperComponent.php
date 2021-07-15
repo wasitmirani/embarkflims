@@ -26,31 +26,31 @@ public static function SideBar(){
                     ]
                 ]
             ],
+            // [
+            //     "g_heading"=>"DIRECTORIES",
+            //     "menu"=>[
+            //         "title"=>'Variations',
+            //         "icon"=>"fab fa-vuejs",
+            //         "color_code"=>"",
+            //         "can"=>"",
+            //         "v-can"=>"",
+            //         "sub_menu"=>[
+            //                 // setSubMenu(
+            //                 //     null,
+            //                 //     "Services",
+            //                 //     null,
+            //                 //     null,
+            //                 //     null,
+            //                 //     "/services",
+            //                 // ),
+
+            //         ],
+
+            //     ],
+
+            // ],
             [
                 "g_heading"=>"DIRECTORIES",
-                "menu"=>[
-                    "title"=>'Variations',
-                    "icon"=>"fab fa-vuejs",
-                    "color_code"=>"",
-                    "can"=>"",
-                    "v-can"=>"",
-                    "sub_menu"=>[
-                            setSubMenu(
-                                null,
-                                "Services",
-                                null,
-                                null,
-                                null,
-                                "/services",
-                            ),
-
-                    ],
-
-                ],
-
-            ],
-            [
-                "g_heading"=>"",
                 "menu"=>[
                     "title"=>'Project',
                     "icon"=>"fas fa-tasks",
