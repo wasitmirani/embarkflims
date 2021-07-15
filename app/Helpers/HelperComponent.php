@@ -72,7 +72,7 @@ public static function SideBar(){
                                 null,
                                 null,
                                 null,
-                                "/project/source/files",
+                                "/files",
                             ),
 
                     ],
