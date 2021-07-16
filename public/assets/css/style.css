@@ -1,0 +1,583 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+/*
+font-family: 'Cormorant Garamond', serif;
+font-family: 'Playfair Display', serif;
+*/
+body{
+  font-family: 'Cormorant Garamond', serif !important;
+}
+.dis-flex { display: flex; align-self: center; justify-content: center; }
+.dis-flex-start { display: flex; align-items: center; justify-content: flex-start; }
+.dis-flex-end { display: flex; align-items: center; justify-content: flex-end; }
+.heading-one {font-size: 70px;font-weight: 700;line-height: 66px;font-family: 'Playfair Display', serif !important;}
+.heading-two {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 50px;
+    color: #455445;
+    text-transform: uppercase;
+    }
+.heading-three { font-size: 24px; font-weight: 700; line-height: 34px; }
+.heading-four { }
+.para-one {font-size: 18px;line-height: 30px;color: #455444;margin: 10px 0px;font-weight: 400;}
+.para-two { font-size: 14px; font-weight: 400; line-height: 24px; color: rgb(143, 143, 143); margin: 15px 0px; }
+.para-three {font-size: 27px;font-weight: 500;line-height: 43px;}
+.btn.btn-business {color: rgb(255, 255, 255);padding: 5px 30px;border-radius: 12px;transition: all 0.5s ease 0s;background-color: #455444;font-size: 20px;font-weight: 700;}
+.btn.btn-business:hover { }
+.btn.btn-smart {padding: 8px 20px;position: relative;font-size: 24px;font-weight: 600;text-transform: capitalize;background-color: transparent;border: 2px solid #455444;border-radius: 30px;line-height: 20px;color: #455444;transition: all .5s ease;}
+.btn.btn-smart:hover{
+    background-color: #455444;
+    color: #Fff;
+}
+.btn-span { position: relative; display: -webkit-inline-box; }
+
+.social-icons { }
+.social-icons li { margin-left: 12px; }
+.social-icons li a {color: rgb(255, 255, 255);font-size: 28px;}
+.social-icons li a i { }
+a:hover { color: unset; text-decoration: none; opacity: 0.9; }
+/*Responsive*/
+@media(max-width: 1199px){
+.heading-one {
+    font-size: 40px !important;
+    font-weight: 700;
+    line-height: 52px !important;
+}
+}
+/*Responsive*/
+
+/*Header*/
+header{
+  padding: 15px 0;
+}
+header a.btn{
+    background: -c;
+}
+header ul li{
+    margin: 0 0 0 35px;
+}
+/*Header*/
+/*Banner*/
+section.banner{
+  background-position: center !important;
+  background-size: cover !important;
+  height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+section.banner h2{margin: 0 0 25px;}
+section.banner ul{}
+section.banner a.btn{
+    background-color: #fff;
+    color: #455444;
+}
+/*Banner*/
+/*Steps*/
+section.step{
+    background-size: cover !important;
+    background-position: center !important;
+    padding: 90px 0 50px;
+}
+section.step h2.heading-two{  }
+section.step .box{
+    text-align: center;
+    height: 530px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 5px 14px 0px rgb(0 0 0 / 30%);
+    margin: 0 0 0;
+    color: #455445;
+    transition: all .5s ease;
+    background-color: #fff;
+    padding: 0 50px;
+    margin: 40px 0 60px;
+}
+section.step .box:hover{
+    color: #000;
+    background-color: #9fbe9d;
+}
+section.step .box:hover h4,
+section.step .box:hover h3{
+
+}
+section.step .box h4{font-size: 48px;font-weight: 700;}
+section.step .box .img-box{margin: 55px 0px;}
+section.step .box h3{font-size: 48px;font-weight: 700;line-height: 37px;}
+/*Steps*/
+
+/*Video popup*/
+section.video{
+    position: relative;
+    height: 595px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+section.video:before{
+  position: absolute;
+  content: "";
+  background: url(../../assets/images/video-img.jpg);
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+#button {
+  /* Text */
+  font-size: 75px;
+  
+  /* Dimensions */
+  width: 220px;
+  height: 220px;
+  
+  /* Positioning */
+  top: 0;
+  left: 0;
+  z-index: 2;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  
+  /* The code above makes sure the video is
+  both vertically and horizontally centered
+  to the screen */
+  
+  /* Styling */
+  background-color: transparent;
+  border: 0; /* remove annoying grey border */
+  border-radius: 50%; /* make it a circle */
+  outline: none; /* Ditch the annoyning blue outline on click */
+  cursor: pointer;
+  
+  
+  /* ----- Transformations ----- */
+  -webkit-transform: scale(1, 1);
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -o-transform: scale(1, 1);
+  transform: scale(1, 1);
+  
+  /* ----- Transitions ----- */
+  -webkit-transition: transform .5s ease;
+  -moz-transition: transform .5s ease;
+  -ms-transition: transform .5s ease;
+  -o-transition: transform .5s ease;
+  transition: transform .5s ease;
+  border: 20px solid #fff;
+}
+
+#button:hover {
+  /* ----- Transformations ----- */
+  -webkit-transform: scale(1.2, 1.2);
+  -moz-transform: scale(1.2, 1.2);
+  -ms-transform: scale(1.2, 1.2);
+  -o-transform: scale(1.2, 1.2);
+  transform: scale(1.2, 1.2);
+  
+  /* ----- Transitions ----- */
+  -webkit-transition: transform .5s ease;
+  -moz-transition: transform .5s ease;
+  -ms-transition: transform .5s ease;
+  -o-transition: transform .5s ease;
+  transition: transform .5s ease;
+}
+
+#button > i {
+  /* Text */
+  color: white;
+  text-shadow: 1px 1px rgba(255, 255, 255, 0.2);
+  
+  /* Make play sign 3d-ish */
+  
+  /* Positioning */
+  position: relative;
+  
+  
+  
+  /* ----- Transitions ----- */
+  -webkit-transition: color .5s ease;
+  -moz-transition: color .5s ease;
+  -ms-transition: color .5s ease;
+  -o-transition: color .5s ease;
+  transition: color .5s ease;
+  left: 10px;
+}
+
+#button:hover > i {
+  /* Text */
+  color: white;
+  
+  /* ----- Transitions ----- */
+  -webkit-transition: color .5s ease;
+  -moz-transition: color .5s ease;
+  -ms-transition: color .5s ease;
+  -o-transition: color .5s ease;
+  transition: color .5s ease;
+  
+  /* When we hover on the button make the play sign white. */
+}
+
+#lightbox {
+  /* ----- Positioning ----- */
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  
+  /* The code above makes sure that the
+  lightbox covers the entire page*/
+  
+  /* ----- Visibility ----- */
+  display: none;
+  
+  /* ----- Styling ----- */
+  background-color: rgba(0, 0, 0, 0.95);
+  
+  /* Normally, most lightboxes do not use
+  a completely solid black, but with about
+  90-95% opacity so that the background is
+  somewhat visible */
+}
+
+#video-wrapper {
+  /* ----- Positioning ----- */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  
+  /* The code above makes sure the video is
+  both vertically and horizontally centered
+  to the screen */
+  
+  /* ----- Styling ----- */
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  
+  /* The code above is used to add a little shadow to the video making blend in better */
+}
+
+#close-btn {
+  /* ----- Text ----- */
+  color: grey;
+  font-size: 25px;
+  
+  /* ----- Positioning ----- */
+  position: fixed;
+  top: 3%;
+  right: 3%;
+  z-index: 2;
+  
+  /* The code above is used to put the button on the upper right corner of the lightbox */
+  
+  /* ----- Transformations ----- */
+  -webkit-transform: scale(1, 1);
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -o-transform: scale(1, 1);
+  transform: scale(1, 1);
+  
+   /* The code above is used to initialize the scale for the button so that it can be used in transitions */
+  
+  /* ----- Transitions ----- */
+  -webkit-transition: transform .5s ease, color .5s ease;
+  -moz-transition: transform .5s ease, color .5s ease;
+  -ms-transition: transform .5s ease, color .5s ease;
+  -o-transition: transform .5s ease, color .5s ease;
+  transition: transform .5s ease, color .5s ease;
+}
+
+#close-btn:hover {
+  /* ----- Text ----- */
+  color: white;
+  
+  /* ----- Styling ----- */
+  cursor: pointer;
+  
+  /* ----- Transformations ----- */
+  -webkit-transform: scale(1.2, 1.2);
+  -moz-transform: scale(1.2, 1.2);
+  -ms-transform: scale(1.2, 1.2);
+  -o-transform: scale(1.2, 1.2);
+  transform: scale(1.2, 1.2);
+  
+    /* ----- Transitions ----- */
+  -webkit-transition: transform .5s ease, color .5s ease;
+  -moz-transition: transform .5s ease, color .5s ease;
+  -ms-transition: transform .5s ease, color .5s ease;
+  -o-transition: transform .5s ease, color .5s ease;
+  transition: transform .5s ease, color .5s ease;
+}
+/*Video popup*/
+/*About */
+section.about{
+    padding: 80px 0;
+    background-size: cover !important;
+    background-position: center !important;
+}
+section.about .para-one{
+    font-size: 18px;
+}
+section.about a.btn{
+}
+section.about .img-box{
+    height: 715px;
+    width: 100%;
+}
+section.about .img-box img{
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 150px 0px 150px 0px;
+    float: right;
+}
+section.about ul{
+  
+margin: 15px 0 0;
+}
+/*About */
+/*Faqs*/
+section.faqs {
+    /* height: 490px; */
+    background-size: cover !important;
+    background-position: center !important;
+    padding: 50px 0;
+}
+section.faqs .accordion{
+}
+section.faqs .accordion .accordion-item{
+    background-color: transparent;
+    color: #ffff;
+    border: 2px solid #fff;
+    border-right: 0;
+    border-left: 0;
+    padding: 10px 0px;
+}
+section.faqs .accordion .accordion-item .accordion-header{
+    background-color: transparent;
+    border: 0;
+}
+section.faqs .accordion .accordion-item .accordion-header .accordion-button{
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
+    padding: 0 0 0px;
+}
+section.faqs .accordion .accordion-item .accordion-header .accordion-button::after{
+    font-family: "Font Awesome 5 Free" ! important;
+    font-weight: 700;
+    content: "\f067" !important;
+    color: #fff;
+    font-size: 14px !important;
+    background-image: none;
+    transform: unset;
+}
+section.faqs .accordion .accordion-item .accordion-header .accordion-button:not(.collapsed)::after{
+    content: "\f068" !important;
+    top: 30px;
+    position: relative;
+}
+section.faqs .accordion .accordion-item .accordion-header .accordion-collapse{}
+section.faqs .accordion .accordion-item .accordion-body{
+    padding: 0 100px 0 0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+}
+/*Faqs*/
+/*ready*/
+section.ready{
+    background-size: cover !important;
+    background-position: center !important;
+    padding: 100px 0;
+}
+section.ready a.btn{
+    margin: 35px 0 0;
+}
+/*ready*/
+/*Footer*/
+footer{
+    padding: 60px 0 0;
+    background-color: #455444;
+
+}
+footer.login p{
+    font-size: 24px;
+    font-weight: 600;
+}
+footer.login p>a{
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+}
+footer .logo{}
+footer .logo img{}
+footer h2{
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 30px;
+}
+footer ul{
+    margin: 0;
+    padding: 0;
+}
+footer ul li{
+    margin: 0 0 15px;
+}
+footer ul li a{font-size: 20px;font-weight: 500;color: #fff !important;text-decoration: none;}
+footer p{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+    margin: 20px 0;
+    padding: 0 60px 0 0;
+}
+footer form{}
+footer form input{
+    background-color: #b5bbb4;
+    font-size: 16px;
+    font-weight: 300;
+    border: 0;
+    height: 42px;
+    padding: 0 15px;
+    width: 90%;
+    margin: 0 0 20px;
+    box-shadow: none;
+    outline: none;
+}
+footer form button{
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 20px;
+    border: 0;
+    color: #455444;
+}
+footer .copyright{
+    text-align: center;
+    padding: 10px 0;
+    margin: 60px 0 0;
+    background-color: #fff;
+}
+footer .copyright p{
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #455444;
+}
+/*Footer*/
+
+.preloader {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 9999;
+   background-image: url('https://media.giphy.com/media/swhRkVYLJDrCE/giphy.gif');
+   background-repeat: no-repeat; 
+   background-color: #e5f0f0;
+   background-position: center;
+}
+
+
+/*Login*/
+body.log-bg{
+    background: url(../../assets/images/login-bg.jpg)no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+body.log-bg .logins{}
+body.log-bg .logins .content{
+    text-align: center;
+    background-color: #455444;
+    margin: 80px 0;
+    /* padding: 120px 0; */
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+body.log-bg .heading-two{
+    color: #fff;
+    margin: 0 0 15px;
+}
+body.log-bg .para-two{
+    font-size: 24px;
+    color: #fff;
+    margin: 0px 0 40px;
+}
+body.log-bg .content form{
+    padding: 0 20%;
+}
+body.log-bg .content form .form-control{background-color: transparent;color: #fff;font-size: 24px;font-weight: 600;padding: 5px 20px;outline: none;box-shadow: none;margin: 0 0 15px;}
+body.log-bg .content form button{
+    margin: 40px 10px 0;
+    border: 1px solid;
+    border-radius: 0;
+    border-right: 0;
+    border-left: 0;
+    font-size: 24px;
+    text-transform: uppercase;
+    padding: 2px 10px;
+    box-shadow: none;
+    outline: none;
+}
+body.log-bg .content form .form-control::-webkit-input-placeholder { /* Edge */
+  color: #fff;
+}
+
+body.log-bg .content form .form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #fff;
+}
+
+body.log-bg .content form .form-control::placeholder {
+  color: #fff;
+}
+.radios {}
+.radios input{visibility: hidden;}
+.radios .image {height: 135px;width: 100%;display: flex;align-items: center;justify-content: center;flex-direction: column;transition: all .5s ease;}
+.radios .image:hover {
+  opacity: 1;
+}
+.radios [type=radio] + label:before,
+.radios [type=radio] + label:after {
+  display: none;
+}
+.radios [type=radio] + label {width: 100%;}
+.radios [type=radio]:not(:checked) + label .image {
+  border: 5px solid white;
+}
+.radios [type=radio]:checked + label .image {
+  border-color: #000;
+  opacity: 1;
+  background-color: #000;
+}
+.radios .image strong{
+    display: block;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    margin: 5px 0 0;
+}
+/*Login*/
