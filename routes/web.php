@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\FreelancerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +15,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[FrontendController::class,'index']);
 
-Auth::routes(['register'=>false]);
+Auth::routes();
 
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::prefix('freelancer')->group(function () {
+    Route::get('login',[FrontendController::class,'showLogin'])->name('show.login');
+
+});
+
+
+
+    Route::resource('freelancer',FreelancerController::class);
+
+
+
+Route::prefix('customer')->group(function(){
+
+    Route::resource('customer',FreelancerController::class);
+
+});

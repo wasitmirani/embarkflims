@@ -28,8 +28,19 @@
 					</div>
 					<div class="col-lg-6 dis-flex-end">
 						<ul class="list-unstyled m-0">
-							<li class="list-inline-item"><a href="{{route('login')}}" class="btn btn-business">Client Login</a></li>
-							<li class="list-inline-item"><a href="{{route('login')}}" class="btn btn-business">Freelancer Login</a></li>
+                            @guest
+                            @if (Route::has('login'))
+							<li class="list-inline-item"><a href="{{route('show.login')}}" class="btn btn-business">Client/Freelancer Login</a></li>
+                            @endif
+                            @else
+                            <li class="list-inline-item"><a href="{{ route('freelancer.index') }}" class="btn btn-business">{{ Auth::user()->name }}</a></li>
+                            <li class="list-inline-item"><a href="#" class="btn btn-business" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                              document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </li>
+                            @endguest
 						</ul>
 					</div>
 				</div>
@@ -39,7 +50,7 @@
 		<!-- Banner -->
 
         @yield('content')
-        
+
 		<!-- Footer -->
 		<footer data-aos="fade-up" data-aos-duration="1000">
 			<div class="container">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,22 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('backend.index');
+        switch (Auth::user()->role) {
+            case 'admin':
+                return view('backend.index');
+                break;
+            case 'freelancer':
+                return view('frontend.index');
+
+                break;
+            case 'customer':
+                return view('frontend.index');
+                break;
+
+            default:
+            return view('backend.index');
+                break;
+        }
+
     }
 }
