@@ -91,6 +91,7 @@
     <script src="{{ asset('/assets/js/page/project-index.js')}}"></script>
     <script src="{{ asset('/assets/bundles/dataTables.bundle.js')}}" ></script>
     <script src="{{ asset('/assets/js/table/datatable.js')}}" ></script>
+    @yield('scripts')
 
    </body>
 </html>

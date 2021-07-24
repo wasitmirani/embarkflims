@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Register - Vetra | E-Commerce HTML Admin Dashboard Template</title>
+    <title>Register Embark</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}"/>
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ asset('dist/icons/themify-icons/themify-icons.css') }}" type="text/css">
 
     <!-- Main style file -->
+
     <link rel="stylesheet" href="{{ asset('dist/css/app.min.css') }}" type="text/css">
 
     <!--[if lt IE 9]>
@@ -40,5 +41,7 @@
 
 <!-- Main Javascript file -->
 <script src="{{ asset('dist/js/app.min.js') }}"></script>
+
+@yield('scripts')
 </body>
 </html>

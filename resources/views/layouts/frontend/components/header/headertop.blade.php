@@ -3,10 +3,10 @@
        <div class="hleft">
            <a class="header-brand" href="index.html"><i class="fe fe-command brand-logo"></i></a>
            <div class="dropdown">
-            <a href="page-search.html" class="nav-link icon"><i class="fa fa-search"></i></a>
+            {{-- <a href="page-search.html" class="nav-link icon"><i class="fa fa-search"></i></a>
             <a href="app-calendar.html" class="nav-link icon app_inbox"><i class="fa fa-calendar"></i></a>
             <a href="app-contact.html" class="nav-link icon xs-hide"><i class="fa fa-id-card-o"></i></a>
-            <a href="app-chat.html" class="nav-link icon xs-hide"><i class="fa fa-comments-o"></i></a>
+            <a href="app-chat.html" class="nav-link icon xs-hide"><i class="fa fa-comments-o"></i></a> --}}
 
           </div>
        </div>

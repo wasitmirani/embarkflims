@@ -79,7 +79,7 @@
 <script src="{{ asset('/assets/js/page/project-index.js')}}"></script>
 <script src="{{ asset('/assets/bundles/dataTables.bundle.js')}}" ></script>
 <script src="{{ asset('/assets/js/table/datatable.js')}}" ></script>
-
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
 <script type="251808cb6ced47f5db4fe2c3-text/javascript">
     {{-- var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -95,6 +95,7 @@
 
 
 <script src="../../../cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="251808cb6ced47f5db4fe2c3-|49" defer=""></script><script defer="" src="../../../beacon.min.js" data-cf-beacon='{"rayId":"66479edf0fa80119","version":"2021.5.2","r":1,"token":"f79813393a9345e8a59bb86abc14d67d","si":10}'></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 @yield('scripts')
 </body>
 </html>

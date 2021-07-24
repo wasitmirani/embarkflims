@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Equipment;
+use App\Models\UserDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,16 +26,50 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+
+        $equipments = Equipment::all();
+        $pos = '';
+        $position = '';
+        if(Auth::user()->is_complete == 'yes'){
+
+        $position = UserDetail::where('user_id',Auth::user()->id)->first();
+        if($position->completion_time == '30 days'){
+
+            $pos = 'Advance Editor: $350';
+
+        }
+        if($position->completion_time == '60 days'){
+
+            $pos = 'Basic Editor: $350';
+
+        }
+        if($position->no_cameras == '1'){
+
+            $pos = 'Asistant Videographer';
+
+        }
+        if($position->no_cameras == '2'){
+
+            $pos = 'Videographer';
+
+        }
+        if($position->no_cameras == '3'){
+
+            $pos = 'Cinametographer';
+
+        }
+    }
+
+
+
         switch (Auth::user()->role) {
-            case 'admin':
+            case 'customer':
                 return view('backend.index');
                 break;
-            case 'freelancer':
-                return view('frontend.index');
 
-                break;
-            case 'customer':
-                return view('frontend.index');
+            case 'freelancer':
+                return view('frontend.dashboard',compact('pos','position','equipments'));
                 break;
 
             default:
@@ -41,5 +77,42 @@ class HomeController extends Controller
                 break;
         }
 
+    }
+
+    public function profile(){
+        $equipments = Equipment::all();
+        $position = UserDetail::with('equipments')->where('user_id',Auth::user()->id)->first();
+        dd($position);
+        $pos = '';
+        if($position->completion_time == '30 days'){
+
+            $pos = 'Advance Editor: $350';
+
+        }
+        if($position->completion_time == '60 days'){
+
+            $pos = 'Basic Editor: $350';
+
+        }
+        if($position->no_cameras == '1'){
+
+            $pos = 'Asistant Videographer';
+
+        }
+        if($position->no_cameras == '2'){
+
+            $pos = 'Videographer';
+
+        }
+        if($position->no_cameras == '3'){
+
+            $pos = 'Cinametographer';
+
+        }
+
+
+
+
+        return view('frontend.profile',compact('pos','position','equipments'));
     }
 }

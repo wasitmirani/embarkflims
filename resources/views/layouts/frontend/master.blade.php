@@ -101,8 +101,10 @@
 		<script src="assets/js/bootstrap.min.js"></script>
 		<script src="assets/js/slick.min.js"></script>
 		<script src="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.js" ></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		    <script>
   AOS.init();
+  @yield('scripts')
 </script>
 	</body>
 </html>

@@ -22,9 +22,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 
-Route::prefix('user')->group(function () {
-    Route::get('/users',[UserController::class,"getUsers"]);
-});
+// Route::prefix('user')->group(function () {
+//     Route::get('/users',[UserController::class,"getUsers"]);
+// });
 
 Route::post('/create/project',[ProjectController::class,'storeProject']);
 Route::post('/update/project',[ProjectController::class,'updateProject']);

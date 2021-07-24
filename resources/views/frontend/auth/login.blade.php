@@ -16,7 +16,7 @@
                         <form class="mb-5" method="POST" action="{{ route('register') }}">
                             @csrf
                             <div class="mb-3">
-                                <input type="text" class="form-control" placeholder="Enter fullname" @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus
+                                <input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Enter fullname" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus
                                        required>
                                        @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -25,8 +25,8 @@
                                 @enderror
                             </div>
                             <div class="mb-3">
-                                <input type="email" class="form-control" placeholder="Enter email"
-                                       required @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input type="email" class="form-control  @error('email') is-invalid @enderror" placeholder="Enter email"
+                                       required name="email" value="{{ old('email') }}" required autocomplete="email">
                                        @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -34,7 +34,7 @@
                                 @enderror
                             </div>
                             <div class="mb-3">
-                                <input type="password" class="form-control" placeholder="Enter password"
+                                <input type="password" class="form-control  @error('password') is-invalid @enderror" placeholder="Enter password"
                                        required @error('password') is-invalid @enderror" name="password">
                                        @error('password')
                                        <span class="invalid-feedback" role="alert">
@@ -43,20 +43,29 @@
                                    @enderror
                             </div>
                             <div class="mb-3">
-                                <input type="password" class="form-control"  name="password_confirmation" placeholder="Re-enter password"
+                                <input type="password" class="form-control "  name="password_confirmation" placeholder="Re-enter password"
                                        required>
                             </div>
                             <div class="mb-3">
-                              <select class="form-control" name="role">
+                              <select class="form-control" name="role" id="role">
                                   <option value="">Register As</option>
                                   <option value="freelancer">{{ __('freelancer') }}</option>
                                   <option value="customer">{{ __('customer') }}</option>
                               </select>
                             </div>
+                            <div class="mb-3">
+                                <select class="form-control" name="post" id="post">
+                                    <option value="">Freelancer As </option>
+                                    <option value="videographer">{{ __('Videographer') }}</option>
+                                    <option value="editor">{{ __('Editor') }}</option>
+
+                                </select>
+                              </div>
 
                             <div class="text-center text-lg-start">
                                 <button type="submit" class="btn btn-primary">Sign Up</button>
                             </div>
+
                         </form>
 
 
@@ -97,28 +106,42 @@
                             <button type="submit" class="btn btn-primary">Sign In</button>
                         </div>
                     </form>
-                    <div class="social-links justify-content-center">
-                        <a href="#">
-                            <i class="ti-google bg-google"></i> Sign in with Google
-                        </a>
-                        <a href="#">
-                            <i class="ti-facebook bg-facebook"></i> Sign in with Facebook
-                        </a>
-                    </div>
-                    <p class="text-center d-block d-lg-none mt-5 mt-lg-0">
-                        Don't have an account? <a href="#">Sign In</a>.
-                    </p>
-                </div>
-                <ul class="list-inline">
+
+                {{-- <ul class="list-inline">
                     <li class="list-inline-item">
                         <a href="#">Privacy Policy</a>
                     </li>
                     <li class="list-inline-item">
                         <a href="#">Terms & Conditions</a>
                     </li>
-                </ul>
+                </ul> --}}
             </div>
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script>
+$(document).ready(function(){
+
+    $("#post").css({display: "none"})
+
+
+})
+$('#role').change(function(){
+    var selected = $('#role').find(":selected").text();
+    if(selected == 'freelancer'){
+        $("#post").css({display: "inline"})
+
+
+
+    }if(selected == 'customer'){
+        $("#post").css({display: "none"})
+
+    }
+
+})
+
+</script>
 @endsection
