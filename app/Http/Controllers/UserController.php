@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Equipment;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,7 +29,7 @@ class UserController extends Controller
             $name = !empty($request->name) ? $request->name : config('app.name');
 
             $name = Str::slug($name, '-')  . "-" . time() . '.' . $request->image->extension();
-            $request->image->move(public_path("/admin/img/users/"), $name);
+            $request->image->move(public_path("/freelancer/img/"), $name);
         }
 
 
