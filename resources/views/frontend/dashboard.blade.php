@@ -171,8 +171,9 @@
             <td>Sean Black</td>
             <td>Angular Admin</td>
             <td>$14,500</td>
-            <td>Done</td>
-            <td><span class="tag tag-success">Delivered</span></td>
+            <td>$14,500</td>
+
+            <td><span class="badge badge-danger">Delivered</td>
             </tr>
 
             </tbody>
@@ -196,7 +197,7 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
-                <form action="{{ route('freelancer.store') }}" method="post">
+                <form action="{{ route('freelancer.add') }}" method="post">
                     @csrf
                <div class="row clearfix">
                   <div class="col-lg-12 col-md-12 col-sm-12">

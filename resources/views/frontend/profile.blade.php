@@ -78,7 +78,7 @@
         @endif
         @if(Auth::user()->post == 'videographer')
 
-        <form class="card" action="{{ route('freelancer.update',$position->id) }}" method="post">
+        <form class="card" action="{{ route('freelancer.userdetail.update',$position->id) }}" method="post">
             @csrf
             {!! method_field('PUT') !!}
 
@@ -133,8 +133,10 @@
             <select class="form-control js-example-responsive"  multiple="multiple" name="equipment[]">
 
                  @foreach($equipments as $equipment)
+                   @foreach($position->equipments as $position->equipment)
 
-                <option @if(isset($position->equipments->equipment) == $equipment->equipment) selected @endif  value="{{ $equipment->id }}" >{{ $equipment->equipment }}</option>
+                <option @if($position->equipment->equipment == $equipment->equipment) selected @endif  value="{{ $equipment->id }}" >{{ $equipment->equipment }}</option>
+                @endforeach
                 @endforeach
 
 
