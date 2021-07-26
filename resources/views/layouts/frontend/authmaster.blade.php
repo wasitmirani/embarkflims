@@ -1,27 +1,18 @@
-
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Register Embark</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <title>Login Signup</title>
+  </head>
+  <style >
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}"/>
-
-    <!-- Themify icons -->
-    <link rel="stylesheet" href="{{ asset('dist/icons/themify-icons/themify-icons.css') }}" type="text/css">
-
-    <!-- Main style file -->
-
-    <link rel="stylesheet" href="{{ asset('dist/css/app.min.css') }}" type="text/css">
-
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
+  </style>
+  @yield('style')
 <body class="auth" stl>
 
 <!-- begin::preloader-->
@@ -31,9 +22,9 @@
 <!-- end::preloader -->
 
 
-    <div class="form-wrapper">
+
       @yield('content')
-    </div>
+
 
 
 <!-- Bundle scripts -->
@@ -43,5 +34,7 @@
 <script src="{{ asset('dist/js/app.min.js') }}"></script>
 
 @yield('scripts')
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </body>
 </html>
