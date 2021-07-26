@@ -101,7 +101,7 @@ class FreelancerController extends Controller
 
 
 
-            return view('frontend.profile',compact('pos','position'));
+            return view('frontend.profile',compact('pos','position','equipments'));
         }
 
 
@@ -194,9 +194,7 @@ class FreelancerController extends Controller
             }
 
 
-
-
-            return view('frontend.profile',compact('pos','position'));
+            return view('frontend.profile',compact('pos','position','equipments'));
         }
 
 
@@ -211,6 +209,17 @@ class FreelancerController extends Controller
     public function destroy($id)
     {
 
+
+    }
+
+    public function assignedProject(){
+
+        return view('frontend.freelancer.projects');
+
+    }
+
+    public function recomendedProject(){
+        return view('frontend.freelancer.recomended');
 
     }
 }

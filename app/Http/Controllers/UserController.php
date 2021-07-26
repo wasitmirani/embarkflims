@@ -21,17 +21,21 @@ class UserController extends Controller
     public function update_profile(Request $request){
 
 
-        $validate = $request->validate([
 
-            'name' => 'required',
-            'email' => 'required'
-
-        ]);
 
         $user = User::where('id',Auth::user()->id)->first();
+        if ($request->hasfile('image')) {
+            $name = !empty($request->name) ? $request->name : config('app.name');
+
+            $name = Str::slug($name, '-')  . "-" . time() . '.' . $request->image->extension();
+            $request->image->move(public_path("/admin/img/users/"), $name);
+        }
+
 
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->image = $name;
+        $user->location = $request->location;
         $update = $user->save();
         if($update){
             return back()->with('message','Profile Updated');

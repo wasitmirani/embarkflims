@@ -20,7 +20,7 @@
     <span class="invalid-feedback" role="alert">
         <strong>{{ $message }}</strong>
     </span>
-@enderror
+   @enderror
     </div>
     </div>
     <div class="col-sm-6 col-md-6">
@@ -34,6 +34,28 @@
 @enderror
     </div>
     </div>
+    <div class="col-sm-6 col-md-6">
+        <div class="form-group">
+        <label class="form-label">Location</label>
+        <input type="text" class="form-control" value="" name="location">
+        @error('location')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+    @enderror
+        </div>
+        </div>
+    <div class="col-sm-6 col-md-6">
+        <div class="form-group">
+        <label class="form-label">Profile Image</label>
+        <input type="file" class="form-control" value="" name="image">
+        @error('image')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+    @enderror
+        </div>
+        </div>
   </div>
     </div>
     <div class="card-footer text-right">

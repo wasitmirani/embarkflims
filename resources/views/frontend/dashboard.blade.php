@@ -140,50 +140,49 @@
              </div>
             <div class="card-body">
             <div class="row">
-            <div class="col-lg-4 col-md-4">
-            <div class="card">
-            <div class="card-body currency_state">
-            <div class="icon"><img src="../assets/images/crypto/BTC.svg" alt="Bitcoin"></div>
-            <div class="content">
-            <div class="text">Number Of Cameras</div>
-            <h5 class="number">{{ $position->no_cameras }}</h5>
-            </div>
-            </div>
-            </div>
-            </div>
-            <div class="col-lg-4 col-md-4">
-            <div class="card">
-            <div class="card-body currency_state">
-            <div class="icon"><img src="../assets/images/crypto/ETH.svg" alt="Ethereum"></div>
-            <div class="content">
-            <div class="text"> Camera Quality </div>
-            <h5 class="number">{{ $position->camera_quality  }}</h5>
-            </div>
-            </div>
-            </div>
-            </div>
-            <div class="col-lg-4 col-md-4">
-            <div class="card">
-            <div class="card-body currency_state">
-            <div class="icon"><img src="../assets/images/crypto/neo.svg" alt="Neo"></div>
-            <div class="content">
-            <div class="text">Lense</div>
-            <h5 class="number">{{ $position->lense }}</h5>
-            </div>
-            </div>
-            </div>
-            </div>
-            </div>
-            <div id="User_Statistics" style="height: 290px"></div>
-            </div>
+           
+
+
 
         </div>
+        </div>
+        </div>
+        <div class="col-12 col-sm-12">
+            <div class="card">
+             <div class="card-header">
+            <h3 class="card-title">Project Summary</h3>
+            </div>
+            <div class="card-body">
+            <div class="table-responsive">
+            <table class="table table-hover table-striped text-nowrap table-vcenter mb-0">
+            <thead>
+            <tr>
+            <th>#</th>
+            <th>Client Name</th>
+            <th>Project</th>
+            <th>Project Cost</th>
+            <th>Payment</th>
+            <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>#AD1245</td>
+            <td>Sean Black</td>
+            <td>Angular Admin</td>
+            <td>$14,500</td>
+            <td>Done</td>
+            <td><span class="tag tag-success">Delivered</span></td>
+            </tr>
 
+            </tbody>
+            </table>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
 
-
-    </div>
-    </div>
-    </div>
  @endif
 @endif
 @if(Auth::user()->post == 'editor')
@@ -268,24 +267,11 @@
        <div class="row clearfix">
         <div class="card">
             <div class="card-header">
-            <h3 class="card-title">Cryptocurrency</h3>
+            <h3 class="card-title">Position Based On Answers: <strong>@if(isset($pos)){{ $pos }}@endif</strong></h3>
             <div class="card-options">
             <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
-            <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
-            <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
-            <div class="item-action dropdown ml-2">
-            <a href="javascript:void(0)" data-toggle="dropdown"><i class="fe fe-more-vertical"></i></a>
-            <div class="dropdown-menu dropdown-menu-right">
-            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-eye"></i> View Details </a>
-            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-share-alt"></i> Share </a>
-            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-cloud-download"></i> Download</a>
-            <div class="dropdown-divider"></div>
-            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-copy"></i> Copy to</a>
-            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-folder"></i> Move to</a>
-            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-edit"></i> Rename</a>
-            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-trash"></i> Delete</a>
-            </div>
-            </div>
+
+
             </div>
              </div>
             <div class="card-body">
@@ -293,10 +279,10 @@
             <div class="col-lg-4 col-md-4">
             <div class="card">
             <div class="card-body currency_state">
-            <div class="icon"><img src="../assets/images/crypto/BTC.svg" alt="Bitcoin"></div>
+            <div class="icon"><i class="fa fa-video-camera" aria-hidden="true"></i></div>
             <div class="content">
-            <div class="text">Bitcoin</div>
-            <h5 class="number">0.005034</h5>
+            <div class="text">Editing Software</div>
+            <h5 class="number">{{ $position->editing_software }}</h5>
             </div>
             </div>
             </div>
@@ -304,10 +290,10 @@
             <div class="col-lg-4 col-md-4">
             <div class="card">
             <div class="card-body currency_state">
-            <div class="icon"><img src="../assets/images/crypto/ETH.svg" alt="Ethereum"></div>
+            <div class="icon"><i class="fa fa-clone" aria-hidden="true"></i></div>
             <div class="content">
-            <div class="text">Ethereum</div>
-            <h5 class="number">0.000359</h5>
+            <div class="text">Grading Experience</div>
+            <h5 class="number">{{ $position->grading_experience }}</h5>
             </div>
             </div>
             </div>
@@ -315,10 +301,10 @@
             <div class="col-lg-4 col-md-4">
             <div class="card">
             <div class="card-body currency_state">
-            <div class="icon"><img src="../assets/images/crypto/neo.svg" alt="Neo"></div>
+            <div class="icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
             <div class="content">
-            <div class="text">Neo</div>
-            <h5 class="number">0.000482</h5>
+            <div class="text">Completion Time</div>
+            <h5 class="number">{{ $position->completion_time }}</h5>
             </div>
             </div>
             </div>
@@ -329,6 +315,45 @@
             </div>
        </div>
     </div>
+    </div
+    <div class="col-12 col-sm-12">
+        <div class="card">
+         <div class="card-header">
+        <h3 class="card-title">Project Summary</h3>
+        </div>
+        <div class="card-body">
+        <div class="table-responsive">
+        <table class="table table-hover table-striped text-nowrap table-vcenter mb-0">
+        <thead>
+        <tr>
+        <th>#</th>
+        <th>Client Name</th>
+
+        <th>Project</th>
+        <th>Project Cost</th>
+        <th>Payment</th>
+        <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>#AD1245</td>
+        <td>Sean Black</td>
+
+        <td>Angular Admin</td>
+        <td>$14,500</td>
+        <td>Done</td>
+        <td><span class="tag tag-success">Delivered</span></td>
+        </tr>
+
+
+
+        </tbody>
+        </table>
+        </div>
+        </div>
+        </div>
+        </div>
 </div>
 
 

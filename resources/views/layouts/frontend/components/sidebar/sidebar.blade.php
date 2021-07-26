@@ -12,8 +12,10 @@
 
     @elsecan('isFreelancer')
     <li class="active"><a href="{{ route('home') }}"><span>Dashboard</span></a></li>
+    <li class="active"><a href="{{ route('freelancer.projects') }}"><span>Asigned Profjects</span></a></li>
+    <li class="active"><a href="{{ route('recomended.projects') }}"><span>Recomended Profjects</span></a></li>
     <li class="active"><a href="index.html"><span>Clients</span></a></li>
-    <li><a href="hr-users.html"><span></span></a></li>
+    <li><a href="{{ route('checkout') }}"><span>Wallet</span></a></li>
 
     @endcan
 

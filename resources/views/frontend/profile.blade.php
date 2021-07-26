@@ -77,6 +77,7 @@
         </form>
         @endif
         @if(Auth::user()->post == 'videographer')
+
         <form class="card" action="{{ route('freelancer.update',$position->id) }}" method="post">
             @csrf
             {!! method_field('PUT') !!}
@@ -133,7 +134,7 @@
 
                  @foreach($equipments as $equipment)
 
-                <option @if($equipment->equipment == $position->equipments->equipment) selected @endif  value="{{ $equipment->equipment }}" >{{ $equipment->equipment }}</option>
+                <option @if($equipment->equipment == $position->equipments) selected @endif  value="{{ $equipment->equipment }}" >{{ $equipment->equipment }}</option>
                 @endforeach
 
 

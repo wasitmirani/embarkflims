@@ -82,7 +82,7 @@ class HomeController extends Controller
     public function profile(){
         $equipments = Equipment::all();
         $position = UserDetail::with('equipments')->where('user_id',Auth::user()->id)->first();
-        dd($position);
+
         $pos = '';
         if($position->completion_time == '30 days'){
 
