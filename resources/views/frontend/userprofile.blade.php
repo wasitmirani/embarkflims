@@ -6,7 +6,7 @@
      <p class='alert alert-danger'>{{ Session::get('message') }}</p>
 
     @endif
-<form class="card" action="{{ route('update.profile') }}" method="post">
+<form class="card" action="{{ route('update.profile') }}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="card-body">
     <h3 class="card-title">Edit Profile</h3>
@@ -37,7 +37,7 @@
     <div class="col-sm-6 col-md-6">
         <div class="form-group">
         <label class="form-label">Location</label>
-        <input type="text" class="form-control" value="" name="location">
+        <input type="text" class="form-control" value="{{ Auth::user()->location }}" name="location">
         @error('location')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>

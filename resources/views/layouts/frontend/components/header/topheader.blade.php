@@ -15,10 +15,16 @@
     <div class="notification d-flex">
 
     <div class="dropdown d-flex">
-    <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1" data-toggle="dropdown"><i class="fa fa-user"></i></a>
+    <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1" data-toggle="dropdown">
+        @if(Auth::user()->image == null)
+        <i class="fa fa-user"></i>
+        @elseif(Auth::user()->image != null)
+        <img src="{{ asset('/freelancer/img/'.Auth::user()->image) }}" style="width:40px;">
+        @endif
+    </a>
     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-    <a class="dropdown-item" href="page-profile.html"><i class="dropdown-icon fe fe-user"></i> Profile</a>
-    <a class="dropdown-item" href="app-setting.html"><i class="dropdown-icon fe fe-settings"></i> Settings</a>
+    <a class="dropdown-item" href="{{ route('edit.profile') }}"><i class="dropdown-icon fe fe-user"></i> Profile</a>
+    <a class="dropdown-item" href="{{ route('profile.setting.form') }}"><i class="dropdown-icon fe fe-settings"></i> Settings</a>
 
     <div class="dropdown-divider"></div>
 

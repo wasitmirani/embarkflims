@@ -25,17 +25,19 @@ class UserController extends Controller
 
 
         $user = User::where('id',Auth::user()->id)->first();
+        $name = "";
         if ($request->hasfile('image')) {
             $name = !empty($request->name) ? $request->name : config('app.name');
 
             $name = Str::slug($name, '-')  . "-" . time() . '.' . $request->image->extension();
             $request->image->move(public_path("/freelancer/img/"), $name);
+            $user->image = $name;
         }
 
 
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->image = $name;
+
         $user->location = $request->location;
         $update = $user->save();
         if($update){
