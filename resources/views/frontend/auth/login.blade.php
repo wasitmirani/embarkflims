@@ -68,8 +68,9 @@
 @section('content')
 <section class="job-form">
     <div class="container">
-      <div class="row">
         <h1>Login & Registration  Form</h1>
+      <div class="row">
+
         <div class="col-lg-12">
           <!-- Nav tabs -->
           <!-- tab options -->
@@ -192,9 +193,13 @@
 
 @section('scripts')
 <script>
+      /*Job form */
+
 $(document).ready(function(){
 
     $("#post").css({display: "none"})
+    $(".nav-tabs a").click(function(){
+$(this).tab('show');
 
 
 })
