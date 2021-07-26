@@ -134,7 +134,7 @@
 
                  @foreach($equipments as $equipment)
 
-                <option @if($equipment->equipment == $position->equipments) selected @endif  value="{{ $equipment->equipment }}" >{{ $equipment->equipment }}</option>
+                <option @if(isset($position->equipments->equipment) == $equipment->equipment) selected @endif  value="{{ $equipment->id }}" >{{ $equipment->equipment }}</option>
                 @endforeach
 
 
