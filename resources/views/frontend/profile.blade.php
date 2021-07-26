@@ -2,7 +2,7 @@
 @section('content')
 <div class="section-body mt-3">
     @if(Auth::user()->post == 'editor')
-    <form class="card" action="{{ route('freelancer.update',$position->id) }}" method="post" >
+    <form class="card" action="{{ route('freelancer.userdetail.update',$position->id) }}" method="post" >
         @csrf
         {!! method_field('PUT') !!}
         <div class="card-body">

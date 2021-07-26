@@ -34,31 +34,40 @@ class HomeController extends Controller
         if(Auth::user()->is_complete == 'yes'){
 
         $position = UserDetail::where('user_id',Auth::user()->id)->first();
-        if($position->completion_time == '30 days'){
+        if(isset($position->completion_time)){
+            if($position->completion_time == '30 days'){
 
-            $pos = 'Advance Editor: $350';
+                $pos = 'Advance Editor: $350';
 
-        }
-        if($position->completion_time == '60 days'){
+            }
+            if($position->completion_time == '60 days'){
 
-            $pos = 'Basic Editor: $350';
+                $pos = 'Basic Editor: $350';
 
-        }
-        if($position->no_cameras == '1'){
-
-            $pos = 'Asistant Videographer';
+            }
 
         }
-        if($position->no_cameras == '2'){
 
-            $pos = 'Videographer';
+        if(isset($position->no_cameras)){
+            if($position->no_cameras == '1'){
+
+                $pos = 'Asistant Videographer';
+
+            }
+            if($position->no_cameras == '2'){
+
+                $pos = 'Videographer';
+
+            }
+            if($position->no_cameras == '3'){
+
+                $pos = 'Cinametographer';
+
+            }
 
         }
-        if($position->no_cameras == '3'){
 
-            $pos = 'Cinametographer';
 
-        }
     }
 
 
@@ -83,30 +92,37 @@ class HomeController extends Controller
         $equipments = Equipment::all();
         $position = UserDetail::with('equipments')->where('user_id',Auth::user()->id)->first();
 
+
         $pos = '';
-        if($position->completion_time == '30 days'){
+        if(isset($position->completion_time)){
+            if($position->completion_time == '30 days'){
 
-            $pos = 'Advance Editor: $350';
+                $pos = 'Advance Editor: $350';
 
-        }
-        if($position->completion_time == '60 days'){
+            }
+            if($position->completion_time == '60 days'){
 
-            $pos = 'Basic Editor: $350';
+                $pos = 'Basic Editor: $350';
 
-        }
-        if($position->no_cameras == '1'){
-
-            $pos = 'Asistant Videographer';
+            }
 
         }
-        if($position->no_cameras == '2'){
+        if(isset($position->no_cameras)){
+            if($position->no_cameras == '1'){
 
-            $pos = 'Videographer';
+                $pos = 'Asistant Videographer';
 
-        }
-        if($position->no_cameras == '3'){
+            }
+            if($position->no_cameras == '2'){
 
-            $pos = 'Cinametographer';
+                $pos = 'Videographer';
+
+            }
+            if($position->no_cameras == '3'){
+
+                $pos = 'Cinametographer';
+
+            }
 
         }
 

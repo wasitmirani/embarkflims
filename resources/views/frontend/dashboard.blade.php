@@ -27,7 +27,7 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('freelancer.store') }}" method="post">
+                    <form action="{{ route('freelancer.add') }}" method="post">
                         @csrf
                    <div class="row clearfix">
                       <div class="col-lg-12 col-md-12 col-sm-12">

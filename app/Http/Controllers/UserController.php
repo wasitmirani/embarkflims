@@ -18,7 +18,7 @@ class UserController extends Controller
         return view('frontend.userprofile',compact('user'));
 
     }
-
+    
     public function update_profile(Request $request){
 
 
