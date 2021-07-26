@@ -7,9 +7,11 @@ use App\Models\Equipment;
 use App\Models\UserDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Common;
 
 class FreelancerController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -17,6 +19,7 @@ class FreelancerController extends Controller
      */
     public function index()
     {
+
 
 
         $status = UserDetail::with('equipments')->where('user_id',Auth::user()->id)->first();
@@ -103,73 +106,73 @@ class FreelancerController extends Controller
 
 
     }
-    public function store(Request $request)
-    {
+    // public function store(Request $request)
+    // {
 
 
-        $detail = new UserDetail();
-        $equipment = json_encode($request->equipment);
-        $detail->user_id = Auth::user()->id;
-        $detail->editing_software = $request->editing_software;
-        $detail->no_cameras = $request->no_cameras;
-        $detail->k_footage = $request->footage;
-        $detail->grading_experience = $request->experience;
-        $detail->lut = $request->lut;
-        $detail->completion_time = $request->completion_time;
-        $detail->no_cameras = $request->no_cameras;
-        $detail->camera_quality = $request->camera_quality;
-        $detail->drone_license = $request->dron_license;
-        $detail->equipment = $equipment;
-        $detail->completion_time = $request->completion_time;
-        $detail->lense = $request->lense;
+    //     $detail = new UserDetail();
+    //     $equipment = json_encode($request->equipment);
+    //     $detail->user_id = Auth::user()->id;
+    //     $detail->editing_software = $request->editing_software;
+    //     $detail->no_cameras = $request->no_cameras;
+    //     $detail->k_footage = $request->footage;
+    //     $detail->grading_experience = $request->experience;
+    //     $detail->lut = $request->lut;
+    //     $detail->completion_time = $request->completion_time;
+    //     $detail->no_cameras = $request->no_cameras;
+    //     $detail->camera_quality = $request->camera_quality;
+    //     $detail->drone_license = $request->dron_license;
+    //     $detail->equipment = $equipment;
+    //     $detail->completion_time = $request->completion_time;
+    //     $detail->lense = $request->lense;
 
-        $profile_updated = $detail->save();
-        if($profile_updated){
+    //     $profile_updated = $detail->save();
+    //     if($profile_updated){
 
-            $detail->equipments()->attach($request->equipment,['created_at'=>now(), 'updated_at'=>now()]);
+    //         $detail->equipments()->attach($request->equipment,['created_at'=>now(), 'updated_at'=>now()]);
 
-            User::where('id',Auth::user()->id)->update([
-                'is_complete' => 'yes'
+    //         User::where('id',Auth::user()->id)->update([
+    //             'is_complete' => 'yes'
 
-            ]);
-            $equipments = Equipment::all();
-            $position = UserDetail::with('equipments')->where('user_id',Auth::user()->id)->first();
-            $pos = '';
-            if($position->completion_time == '30 days'){
+    //         ]);
+    //         $equipments = Equipment::all();
+    //         $position = UserDetail::with('equipments')->where('user_id',Auth::user()->id)->first();
+    //         $pos = '';
+    //         if($position->completion_time == '30 days'){
 
-                $pos = 'Advance Editor: $350';
+    //             $pos = 'Advance Editor: $350';
 
-            }
-            if($position->completion_time == '60 days'){
+    //         }
+    //         if($position->completion_time == '60 days'){
 
-                $pos = 'Basic Editor: $350';
+    //             $pos = 'Basic Editor: $350';
 
-            }
-            if($position->no_cameras == '1'){
+    //         }
+    //         if($position->no_cameras == '1'){
 
-                $pos = 'Asistant Videographer';
+    //             $pos = 'Asistant Videographer';
 
-            }
-            if($position->no_cameras == '2'){
+    //         }
+    //         if($position->no_cameras == '2'){
 
-                $pos = 'Videographer';
+    //             $pos = 'Videographer';
 
-            }
-            if($position->no_cameras == '3'){
+    //         }
+    //         if($position->no_cameras == '3'){
 
-                $pos = 'Cinametographer';
+    //             $pos = 'Cinametographer';
 
-            }
-
-
-
-
-            return view('frontend.profile',compact('pos','position','equipments'));
-        }
+    //         }
 
 
 
-    }
+
+    //         return view('frontend.profile',compact('pos','position','equipments'));
+    //     }
+
+
+
+    // }
 
     /**
      * Display the specified resource.
@@ -262,7 +265,68 @@ class FreelancerController extends Controller
 
 
     }
+    public function updateFreelancer(Request $request, $id)
+    {
 
+        $detail = UserDetail::where('id',$id)->first();
+        $equipment = json_encode($request->equipment);
+        $detail->user_id = Auth::user()->id;
+        $detail->editing_software = $request->editing_software;
+        $detail->no_cameras = $request->no_cameras;
+        $detail->k_footage = $request->footage;
+        $detail->grading_experience = $request->experience;
+        $detail->lut = $request->lut;
+        $detail->completion_time = $request->completion_time;
+        $detail->no_cameras = $request->no_cameras;
+        $detail->camera_quality = $request->camera_quality;
+        $detail->drone_license = $request->dron_license;
+        $detail->equipment = $equipment;
+        $detail->completion_time = $request->completion_time;
+        $detail->lense = $request->lense;
+
+        $profile_updated = $detail->save();
+        if($profile_updated){
+            $detail->equipments()->attach($request->equipment,['created_at'=>now(), 'updated_at'=>now()]);
+
+            User::where('id',Auth::user()->id)->update([
+                'is_complete' => 'yes'
+
+            ]);
+            $equipments = Equipment::all();
+            $position = UserDetail::with('equipments')->where('user_id',Auth::user()->id)->first();
+            $pos = '';
+            if($position->completion_time == '30 days'){
+
+                $pos = 'Advance Editor: $350';
+
+            }
+            if($position->completion_time == '60 days'){
+
+                $pos = 'Basic Editor: $350';
+
+            }
+            if($position->no_cameras == '1'){
+
+                $pos = 'Asistant Videographer';
+
+            }
+            if($position->no_cameras == '2'){
+
+                $pos = 'Videographer';
+
+            }
+            if($position->no_cameras == '3'){
+
+                $pos = 'Cinametographer';
+
+            }
+
+
+            return view('frontend.profile',compact('pos','position','equipments'));
+        }
+
+
+    }
     /**
      * Remove the specified resource from storage.
      *

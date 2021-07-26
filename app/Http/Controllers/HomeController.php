@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Common;
 use App\Models\Equipment;
 use App\Models\UserDetail;
 use Illuminate\Http\Request;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -27,10 +29,12 @@ class HomeController extends Controller
     public function index()
     {
 
-
         $equipments = Equipment::all();
         $pos = '';
         $position = '';
+
+     
+
         if(Auth::user()->is_complete == 'yes'){
 
         $position = UserDetail::where('user_id',Auth::user()->id)->first();

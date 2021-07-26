@@ -18,13 +18,14 @@ class UserController extends Controller
         return view('frontend.userprofile',compact('user'));
 
     }
-    
+
     public function update_profile(Request $request){
 
 
 
 
         $user = User::where('id',Auth::user()->id)->first();
+
         $name = "";
         if ($request->hasfile('image')) {
             $name = !empty($request->name) ? $request->name : config('app.name');

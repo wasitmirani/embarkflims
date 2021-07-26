@@ -13,4 +13,6 @@ class Equipment extends Model
     public function user_details(){
         return $this->belongsToMany(UserDetail::class,'equipment_user_detail','id');
     }
+
+    
 }
