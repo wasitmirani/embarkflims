@@ -26,8 +26,7 @@
     <div class="col-7 py-1">09 Jun 2019 11:32AM</div>
     <div class="col-5 py-1"><strong>Creator:</strong></div>
     <div class="col-7 py-1">Nathan Guerrero</div>
-    <div class="col-5 py-1"><strong>Question:</strong></div>
-    <div class="col-7 py-1"><strong>23</strong></div>
+
     <div class="col-5 py-1"><strong>Comments:</strong></div>
     <div class="col-7 py-1"><strong>32</strong></div>
     <div class="col-5 py-1"><strong>Bug:</strong></div>
