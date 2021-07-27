@@ -12,7 +12,7 @@
     <h3 class="card-title">New Admin Design</h3>
     <div class="card-options">
     <label class="custom-switch m-0">
-    <input type="checkbox" value="1" class="custom-switch-input" checked="">
+    <input type="checkbox" value="1" class="custom-switch-input statusCheck" checked="">
     <span class="custom-switch-indicator"></span>
     </label>
     <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
@@ -27,19 +27,14 @@
     <div class="col-5 py-1"><strong>Creator:</strong></div>
     <div class="col-7 py-1">Nathan Guerrero</div>
 
-    <div class="col-5 py-1"><strong>Comments:</strong></div>
-    <div class="col-7 py-1"><strong>32</strong></div>
-    <div class="col-5 py-1"><strong>Bug:</strong></div>
-    <div class="col-7 py-1"><strong>5</strong></div>
-    <div class="col-5 py-1"><strong>Team:</strong></div>
+    <div class="col-5 py-1"><strong>Client Name:</strong></div>
+    <div class="col-7 py-1"><strong>Colorado</strong></div>
+
+    <div class="col-5 py-1"><strong>Client:</strong></div>
     <div class="col-7 py-1">
     <div class="avatar-list avatar-list-stacked">
     <img class="avatar avatar-sm" src="../assets/images/xs/avatar1.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <img class="avatar avatar-sm" src="../assets/images/xs/avatar2.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <img class="avatar avatar-sm" src="../assets/images/xs/avatar3.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <img class="avatar avatar-sm" src="../assets/images/xs/avatar4.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <img class="avatar avatar-sm" src="../assets/images/xs/avatar5.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <span class="avatar avatar-sm">+8</span>
+
     </div>
     </div>
     </div>
@@ -61,7 +56,7 @@
     <h3 class="card-title">Job Portal Web App</h3>
     <div class="card-options">
     <label class="custom-switch m-0">
-    <input type="checkbox" value="1" class="custom-switch-input" checked="">
+    <input type="checkbox" value="1" class="custom-switch-input statusCheck" checked="">
     <span class="custom-switch-indicator"></span>
     </label>
     <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
@@ -73,23 +68,17 @@
     <div class="row">
     <div class="col-5 py-1"><strong>Created:</strong></div>
     <div class="col-7 py-1">09 Jun 2019 11:32AM</div>
-    <div class="col-5 py-1"><strong>Creator:</strong></div>
+    <div class="col-5 py-1"><strong>Client:</strong></div>
     <div class="col-7 py-1">Nathan Guerrero</div>
-    <div class="col-5 py-1"><strong>Question:</strong></div>
-    <div class="col-7 py-1"><strong>55</strong></div>
-    <div class="col-5 py-1"><strong>Comments:</strong></div>
-    <div class="col-7 py-1"><strong>43</strong></div>
-    <div class="col-5 py-1"><strong>Bug:</strong></div>
-    <div class="col-7 py-1"><strong>5</strong></div>
+    <div class="col-5 py-1"><strong>Status:</strong></div>
+    <div class="col-7 py-1 showStatus"></div>
+
+
     <div class="col-5 py-1"><strong>Team:</strong></div>
     <div class="col-7 py-1">
     <div class="avatar-list avatar-list-stacked">
     <img class="avatar avatar-sm" src="../assets/images/xs/avatar6.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <img class="avatar avatar-sm" src="../assets/images/xs/avatar7.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <img class="avatar avatar-sm" src="../assets/images/xs/avatar8.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <img class="avatar avatar-sm" src="../assets/images/xs/avatar1.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <img class="avatar avatar-sm" src="../assets/images/xs/avatar2.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <span class="avatar avatar-sm">+8</span>
+
     </div>
     </div>
     </div>
@@ -111,7 +100,7 @@
     <h3 class="card-title">App design and Development</h3>
     <div class="card-options">
     <label class="custom-switch m-0">
-    <input type="checkbox" value="1" class="custom-switch-input" checked="">
+    <input type="checkbox" value="1" class="custom-switch-input statusCheck" checked="">
     <span class="custom-switch-indicator"></span>
     </label>
     <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
@@ -123,21 +112,15 @@
     <div class="row">
     <div class="col-5 py-1"><strong>Created:</strong></div>
     <div class="col-7 py-1">09 Jun 2019 11:32AM</div>
-    <div class="col-5 py-1"><strong>Creator:</strong></div>
+    <div class="col-5 py-1"><strong>Client:</strong></div>
     <div class="col-7 py-1">Nathan Guerrero</div>
-    <div class="col-5 py-1"><strong>Question:</strong></div>
-    <div class="col-7 py-1"><strong>12</strong></div>
-    <div class="col-5 py-1"><strong>Comments:</strong></div>
-    <div class="col-7 py-1"><strong>96</strong></div>
-    <div class="col-5 py-1"><strong>Bug:</strong></div>
-    <div class="col-7 py-1"><strong>7</strong></div>
+
+
     <div class="col-5 py-1"><strong>Team:</strong></div>
     <div class="col-7 py-1">
     <div class="avatar-list avatar-list-stacked">
     <img class="avatar avatar-sm" src="../assets/images/xs/avatar1.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <img class="avatar avatar-sm" src="../assets/images/xs/avatar2.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <img class="avatar avatar-sm" src="../assets/images/xs/avatar5.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <span class="avatar avatar-sm">+8</span>
+
     </div>
     </div>
     </div>
@@ -159,7 +142,7 @@
     <h3 class="card-title">Job Portal Web App</h3>
     <div class="card-options">
     <label class="custom-switch m-0">
-    <input type="checkbox" value="1" class="custom-switch-input" checked="">
+    <input type="checkbox" value="1" class="custom-switch-input statusCheck" checked="">
     <span class="custom-switch-indicator"></span>
     </label>
     <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
@@ -171,23 +154,14 @@
     <div class="row">
     <div class="col-5 py-1"><strong>Created:</strong></div>
     <div class="col-7 py-1">09 Jun 2019 11:32AM</div>
-    <div class="col-5 py-1"><strong>Creator:</strong></div>
+    <div class="col-5 py-1"><strong>C:</strong></div>
     <div class="col-7 py-1">Nathan Guerrero</div>
-    <div class="col-5 py-1"><strong>Question:</strong></div>
-    <div class="col-7 py-1"><strong>55</strong></div>
-    <div class="col-5 py-1"><strong>Comments:</strong></div>
-    <div class="col-7 py-1"><strong>43</strong></div>
-    <div class="col-5 py-1"><strong>Bug:</strong></div>
-    <div class="col-7 py-1"><strong>5</strong></div>
+
     <div class="col-5 py-1"><strong>Team:</strong></div>
     <div class="col-7 py-1">
     <div class="avatar-list avatar-list-stacked">
     <img class="avatar avatar-sm" src="../assets/images/xs/avatar6.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <img class="avatar avatar-sm" src="../assets/images/xs/avatar7.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <img class="avatar avatar-sm" src="../assets/images/xs/avatar8.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <img class="avatar avatar-sm" src="../assets/images/xs/avatar1.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <img class="avatar avatar-sm" src="../assets/images/xs/avatar2.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <span class="avatar avatar-sm">+8</span>
+
     </div>
     </div>
     </div>
@@ -209,7 +183,7 @@
     <h3 class="card-title">One Page landing</h3>
     <div class="card-options">
     <label class="custom-switch m-0">
-    <input type="checkbox" value="1" class="custom-switch-input" checked="">
+    <input type="checkbox" value="1" class="custom-switch-input statusCheck" checked="">
     <span class="custom-switch-indicator"></span>
     </label>
     <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
@@ -223,21 +197,12 @@
     <div class="col-7 py-1">09 Jun 2019 11:32AM</div>
     <div class="col-5 py-1"><strong>Creator:</strong></div>
     <div class="col-7 py-1">Nathan Guerrero</div>
-    <div class="col-5 py-1"><strong>Question:</strong></div>
-    <div class="col-7 py-1"><strong>23</strong></div>
-    <div class="col-5 py-1"><strong>Comments:</strong></div>
-    <div class="col-7 py-1"><strong>32</strong></div>
-    <div class="col-5 py-1"><strong>Bug:</strong></div>
-    <div class="col-7 py-1"><strong>5</strong></div>
+
     <div class="col-5 py-1"><strong>Team:</strong></div>
     <div class="col-7 py-1">
     <div class="avatar-list avatar-list-stacked">
     <img class="avatar avatar-sm" src="../assets/images/xs/avatar1.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <img class="avatar avatar-sm" src="../assets/images/xs/avatar2.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <img class="avatar avatar-sm" src="../assets/images/xs/avatar3.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <img class="avatar avatar-sm" src="../assets/images/xs/avatar4.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <img class="avatar avatar-sm" src="../assets/images/xs/avatar5.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <span class="avatar avatar-sm">+8</span>
+
     </div>
     </div>
     </div>
@@ -259,7 +224,7 @@
     <h3 class="card-title">Job Portal Web App</h3>
     <div class="card-options">
     <label class="custom-switch m-0">
-    <input type="checkbox" value="1" class="custom-switch-input" checked="">
+    <input type="checkbox" value="1" class="custom-switch-input statusCheck" checked="">
     <span class="custom-switch-indicator"></span>
     </label>
     <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
@@ -271,23 +236,14 @@
     <div class="row">
     <div class="col-5 py-1"><strong>Created:</strong></div>
     <div class="col-7 py-1">09 Jun 2019 11:32AM</div>
-    <div class="col-5 py-1"><strong>Creator:</strong></div>
+    <div class="col-5 py-1"><strong>Client:</strong></div>
     <div class="col-7 py-1">Nathan Guerrero</div>
-    <div class="col-5 py-1"><strong>Question:</strong></div>
-    <div class="col-7 py-1"><strong>55</strong></div>
-    <div class="col-5 py-1"><strong>Comments:</strong></div>
-    <div class="col-7 py-1"><strong>43</strong></div>
-    <div class="col-5 py-1"><strong>Bug:</strong></div>
-    <div class="col-7 py-1"><strong>5</strong></div>
+
     <div class="col-5 py-1"><strong>Team:</strong></div>
     <div class="col-7 py-1">
     <div class="avatar-list avatar-list-stacked">
     <img class="avatar avatar-sm" src="../assets/images/xs/avatar6.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <img class="avatar avatar-sm" src="../assets/images/xs/avatar7.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <img class="avatar avatar-sm" src="../assets/images/xs/avatar8.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <img class="avatar avatar-sm" src="../assets/images/xs/avatar1.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <img class="avatar avatar-sm" src="../assets/images/xs/avatar2.jpg" data-toggle="tooltip" title="" data-original-title="Avatar Name">
-    <span class="avatar avatar-sm">+8</span>
+
     </div>
     </div>
     </div>
@@ -305,4 +261,38 @@
     </div>
     </div>
     </div>
+@endsection
+@section('scripts')
+<script>
+    $(document).ready(function(){
+        var status = "";
+        $('.statusCheck').on('change',function(){
+
+
+            if(status == "" || status == 'Deactive') {
+                status = 'Active'
+                $('.showStatus').html(status)
+
+            }else if(status == 'Active'){
+                status = 'Deactive'
+                $('.showStatus').html(status)
+            }
+
+            $.ajax({
+                url : '/change/status',
+                type: 'POST',
+                data:{_token:"{{ csrf_token() }}"},
+                success:function(msg){
+
+                    $('.showStatus').html(msg)
+
+                }
+            })
+
+
+        })
+
+    })
+</script>
+
 @endsection

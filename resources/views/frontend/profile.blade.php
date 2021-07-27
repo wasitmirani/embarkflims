@@ -1,6 +1,7 @@
 @extends('layouts.frontend.app')
 @section('content')
 <div class="section-body mt-3">
+
     @if(Auth::user()->post == 'editor')
     <form class="card" action="{{ route('freelancer.update',$position->id) }}" method="post" >
         @csrf
@@ -9,13 +10,13 @@
         <h3 class="card-title">Acount Setting</h3>
 
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-md-6">
                 <div class="form-group">
                 <label class="form-label">Position</label>
                 <input type="text" class="form-control" disabled value="{{ $pos }}">
                 </div>
                 </div>
-        <div class="col-md-5">
+        <div class="col-md-6">
         <div class="form-group">
         <label class="form-label">Which editing software do you use?</label>
         <select class="form-control" name="editing_software">
@@ -26,7 +27,7 @@
         </div>
         </div>
 
-        <div class="col-sm-6 col-md-4">
+        <div class="col-sm-6 col-md-6">
         <div class="form-group">
         <label class="form-label">Can you edit 4k footage?</label>
         <select class="form-control" name="footage">
@@ -56,7 +57,7 @@
         </select>
         </div>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-6">
         <div class="form-group">
         <label class="form-label">How long does it take for you to complete a wedding film/project?</label>
         <select class="form-control" name="completion_time">
@@ -85,13 +86,13 @@
             <div class="card-body">
             <h3 class="card-title">Acount Setting</h3>
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-6">
                     <div class="form-group">
                     <label class="form-label">Position</label>
                     <input type="text" class="form-control" disabled value="{{ $pos }}">
                     </div>
                     </div>
-            <div class="col-md-5">
+            <div class="col-md-6">
             <div class="form-group">
             <label class="form-label"> How many cameras do you film with?</label>
             <select class="form-control" name="no_cameras">
@@ -103,7 +104,7 @@
             </div>
             </div>
 
-            <div class="col-sm-6 col-md-4">
+            <div class="col-sm-6 col-md-6">
             <div class="form-group">
             <label class="form-label">What quality can your camera film in?</label>
             <select class="form-control" name="camera_quality">
@@ -130,20 +131,23 @@
             <div class="form-group">
             <label class="form-label">Please select any equipment that you own and use</label>
 
+
             <select class="form-control js-example-responsive"  multiple="multiple" name="equipment[]">
 
-                 @foreach($equipments as $equipment)
-                   @foreach($position->equipments as $position->equipment)
 
-                <option @if($position->equipment->equipment == $equipment->equipment) selected @endif  value="{{ $equipment->id }}" >{{ $equipment->equipment }}</option>
+                   @foreach($position->equipments as $equips )
+                    @php $equips = $equips->toArray() @endphp
+                    @endforeach
+                   @foreach($equipments as $equipment)
+                   <option {{ in_array($equipment->equipment, $equips) ? 'selected' : ''}} value="{{ $equipment->id }}">{{ $equipment->equipment }}</option>
                 @endforeach
-                @endforeach
+
 
 
             </select>
             </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-6">
             <div class="form-group">
             <label class="form-label">Please select any lense that you own and use</label>
             <select class="form-control" name="lense">

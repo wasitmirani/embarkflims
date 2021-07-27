@@ -14,7 +14,7 @@
     <li class=""><a href="{{ route('home') }}"><span>Content</span></a></li>
     <li class=""><a href="{{ route('freelancer.projects') }}"><span>Asigned Projects</span></a></li>
     <li class=""><a href="{{ route('recomended.projects') }}"><span>Recomended Projects</span></a></li>
-    <li class=""><a href="#"><span>Clients</span></a></li>
+    <li class=""><a href="{{ route('freelancer.clients') }}"><span>Clients</span></a></li>
     <li><a href="{{ route('checkout') }}"><span>Wallet</span></a></li>
 
     @endcan

@@ -34,6 +34,8 @@ Route::middleware('guest')->prefix('freelancer')->group(function () {
 
 });
 
+
+
 Route::middleware('auth')->group(function(){
     Route::resource('freelancer',FreelancerController::class);
     Route::post('freelancer/userdetail',[FreelancerController::class,'storeFreelancer'])->name('freelancer.add');
@@ -43,7 +45,9 @@ Route::middleware('auth')->group(function(){
     Route::post('/update/profile',[UserController::class,'update_profile'])->name('update.profile');
     Route::get('/checkout',[WalletController::class,'checkout'])->name('checkout');
     Route::get('/projects',[FreelancerController::class,'assignedProject'])->name('freelancer.projects');
+    Route::get('/clients',[FreelancerController::class,'client'])->name('freelancer.clients');
     Route::get('/recomended/projects',[FreelancerController::class,'recomendedProject'])->name('recomended.projects');
+    Route::post('/change/status',[FreelancerController::class,'changeStatus']);
 });
 
 

@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Common;
+use App\Models\Project;
 use App\Models\Equipment;
 use App\Models\UserDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Common;
 
 class FreelancerController extends Controller
 {
@@ -225,7 +226,8 @@ class FreelancerController extends Controller
         $profile_updated = $detail->save();
         if($profile_updated){
             $detail->equipments()->attach($request->equipment,['created_at'=>now(), 'updated_at'=>now()]);
-
+        //     $event = $detail->equipments()->first();
+        //    $event->update($request->equipment);
             User::where('id',Auth::user()->id)->update([
                 'is_complete' => 'yes'
 
@@ -286,7 +288,10 @@ class FreelancerController extends Controller
 
         $profile_updated = $detail->save();
         if($profile_updated){
-            $detail->equipments()->attach($request->equipment,['created_at'=>now(), 'updated_at'=>now()]);
+            // $detail->equipments()->attach($request->equipment,['created_at'=>now(), 'updated_at'=>now()]);
+
+$event = $detail->equipments()->first();
+$detail->equipments()->update($event, ['equipment_id' => $request->equipment]);
 
             User::where('id',Auth::user()->id)->update([
                 'is_complete' => 'yes'
@@ -348,5 +353,20 @@ class FreelancerController extends Controller
     public function recomendedProject(){
         return view('frontend.freelancer.recomended');
 
+    }
+
+    public function changeStatus(Request $request){
+
+       $status = Project::where('user_id',18)->update([
+            'project_status' => 1
+        ]);
+
+        return response()->json('active');
+
+    }
+
+    public function client(){
+
+        return view('frontend.freelancer.client');
     }
 }

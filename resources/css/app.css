@@ -1,0 +1,66 @@
+body{}
+.job-form{
+height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 60px 0;
+text-align: center;
+}
+.job-form .nav-tabs{
+margin: 30px auto 30px;
+border: 0;
+text-align: center;
+justify-content: center;
+}
+.job-form .nav-tabs li.nav-item{
+margin: 0 20px 0 0;
+}
+.job-form .nav-tabs li.nav-item button{
+font-size: 15px;
+font-weight: 700;
+}
+.job-form h2{}
+.job-form label{
+font-size: 18px;
+font-weight: 700;
+}
+.job-form .form-control{
+border-color: #0006;
+box-shadow: none;
+background-color: #fff;
+outline: none;
+border-radius: 0;
+height: 46px;
+width: 50%;
+margin: auto;
+}
+.job-form .btn.btn-business{
+font-size: 15px;
+font-weight: 700;
+background-color: #9c3d3d;
+padding: 10px 40px;
+border-radius: 15px 0px 15px 15px;
+color: #fff;
+}
+.job-form  .mycusttab li button.active, .job-form  .mycusttab li button:hover {
+background-color: #455444;
+color: #fff;
+border-color: #455444;
+cursor: pointer;
+}
+.job-form  .mycusttab li button {
+margin: auto;
+background-color: transparent;
+border: 2px solid;
+border-radius: 15px 0px 15px 15px;
+padding: 5px 40px;
+box-shadow: none !important;
+outline: none;
+transition: all .5s ease;
+border-color: #000;
+color: #000;
+}
+.job-form .form-group{
+margin: 0 0 15px;
+}

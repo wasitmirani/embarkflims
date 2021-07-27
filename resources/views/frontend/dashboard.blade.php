@@ -271,7 +271,7 @@
             <div class="card-body ribbon">
             <div class="ribbon-box green">5</div>
             <a href="hr-users.html" class="my_sort_cut text-muted">
-            <i class="icon-users"></i>
+            <i class="icon-bell"></i>
             <span>Active Projects</span>
             </a>
             </div>
@@ -282,7 +282,7 @@
                 <div class="card-body ribbon">
                 <div class="ribbon-box green">5</div>
                 <a href="hr-users.html" class="my_sort_cut text-muted">
-                <i class="icon-users"></i>
+                <i class="icon-action-redo"></i>
                 <span>Recommended Projected</span>
                 </a>
                 </div>
@@ -304,7 +304,7 @@
                         <div class="card-body ribbon">
                         <div class="ribbon-box green">5</div>
                         <a href="hr-users.html" class="my_sort_cut text-muted">
-                        <i class="icon-users"></i>
+                        <i class="icon-book-open"></i>
                         <span>Delivered Projects</span>
                         </a>
                         </div>
@@ -514,7 +514,7 @@
             <div class="card-body ribbon">
             <div class="ribbon-box green">5</div>
             <a href="hr-users.html" class="my_sort_cut text-muted">
-            <i class="icon-users"></i>
+            <i class="icon-calender"></i>
             <span>Active Projects</span>
             </a>
             </div>
