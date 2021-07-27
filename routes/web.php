@@ -28,22 +28,24 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::prefix('freelancer')->group(function () {
+Route::middleware('guest')->prefix('freelancer')->group(function () {
     Route::get('login',[FrontendController::class,'showLogin'])->name('show.login');
     Route::get('register',[FrontendController::class,'showRegister'])->name('show.register');
 
 });
 
+Route::middleware('auth')->group(function(){
+    Route::resource('freelancer',FreelancerController::class);
+    Route::post('freelancer/userdetail',[FreelancerController::class,'storeFreelancer'])->name('freelancer.add');
+    Route::patch('freelancer/userdetail/{$id}',[FreelancerController::class,'updateFreelancer'])->name('freelancer.userdetail.update');
+    Route::get('profile',[HomeController::class,'profile'])->name('profile.setting.form');
+    Route::get('/edit/profile',[UserController::class,'edit_profile'])->name('edit.profile');
+    Route::post('/update/profile',[UserController::class,'update_profile'])->name('update.profile');
+    Route::get('/checkout',[WalletController::class,'checkout'])->name('checkout');
+    Route::get('/projects',[FreelancerController::class,'assignedProject'])->name('freelancer.projects');
+    Route::get('/recomended/projects',[FreelancerController::class,'recomendedProject'])->name('recomended.projects');
+});
 
-Route::resource('freelancer',FreelancerController::class);
-Route::post('freelancer/userdetail',[FreelancerController::class,'storeFreelancer'])->name('freelancer.add');
-Route::patch('freelancer/userdetail/{$id}',[FreelancerController::class,'updateFreelancer'])->name('freelancer.userdetail.update');
-Route::get('profile',[HomeController::class,'profile'])->name('profile.setting.form');
-Route::get('/edit/profile',[UserController::class,'edit_profile'])->name('edit.profile');
-Route::post('/update/profile',[UserController::class,'update_profile'])->name('update.profile');
-Route::get('/checkout',[WalletController::class,'checkout'])->name('checkout');
-Route::get('/projects',[FreelancerController::class,'assignedProject'])->name('freelancer.projects');
-Route::get('/recomended/projects',[FreelancerController::class,'recomendedProject'])->name('recomended.projects');
 
 
 
