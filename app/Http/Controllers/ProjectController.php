@@ -53,7 +53,7 @@ class ProjectController extends Controller
         return response()->json( $project);
     }
     public function updateProject(Request $request){
-        $project= Project::where('id',$request->id)->update([
+        $project = Project::where('id',$request->id)->update([
             'groom_name'=>$request->name,
             'bride_name'=>$request->b_name,
             'date'=>$request->date,

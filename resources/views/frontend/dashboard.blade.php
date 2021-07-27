@@ -242,7 +242,7 @@
                     <div class="col-md-12 col-sm-12 col-sm-12">
                         <div class="form-group">
                             <select class="form-control js-example-responsive"  multiple="multiple" name="equipment[]">
-                                <option selected> Please select any equipment that you own and use</option>
+
                                 @foreach($equipments as $equipment)
                                 <option value="{{ $equipment->id }}">{{ $equipment->equipment }}</option>
                                 @endforeach
