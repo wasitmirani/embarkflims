@@ -15,6 +15,178 @@
       <a href="#tab4" class="nav-link" id="nav-group-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"  role="tab" aria-controls="nav-contact" aria-selected="false" style="margin-right: 20px;">Details</a>
     </div>
   </nav> --}}
+
+  @if(Auth::user()->post == null)
+  @if(Auth::user()->is_complete == 'No')
+  <div class="grid lg:grid-cols-3 mt-12 gap-8  " >
+
+
+    <div class="section-body mt-3">
+        <div class="header-action ">
+            <h6 class="page-title ml-4">Complete Your Profile</h6>
+        </div>
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-body">
+                    <form action="{{ route('freelancer.add') }}" method="post">
+                        @csrf
+                   <div class="row clearfix">
+                      <div class="col-lg-12 col-md-12 col-sm-12">
+                          <div class="form-group">
+
+                           <select class="form-control" name="no_cameras">
+                               <option selected> How many cameras do you film with?</option>
+                               <option value="1">1</option>
+                               <option value="2">2</option>
+                               <option value="3">3</option>
+                           </select>
+                          </div>
+                       </div>
+
+
+                       <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="form-group">
+                            <select class="form-control" name="camera_quality">
+                                <option selected> What quality can your camera film in?</option>
+                                <option value="1080p HD 60fps">1080p HD 60fps</option>
+                                <option value="4k 24fps (or more)">4k 24fps (or more)</option>
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+
+                        <div class="form-group">
+                            <select class="form-control" name="dron_license">
+                                <option selected> Do you have a Drone operating license?</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 col-sm-12">
+                        <div class="form-group">
+                            <select class="form-control js-example-responsive"  multiple="multiple" name="equipment[]">
+                                <option selected> Please select any equipment that you own and use</option>
+                                @foreach($equipments as $equipment)
+                                <option value="{{ $equipment->id }}">{{ $equipment->equipment }}</option>
+                                @endforeach
+
+
+                            </select>
+                        </div>
+                    </div>
+
+                     <div class="col-md-12 col-sm-12 col-sm-12">
+                        <div class="form-group">
+                            <select class="form-control" name="lense">
+                                <option selected>  Please select any lense that you own and use</option>
+                                <option value="16-35mm f1.8 (or lower)">16-35mm f1.8 (or lower)</option>
+                                <option value="50mm f1.8 (or lower)">50mm f1.8 (or lower)</option>
+                                <option value="85mm f1.8 (or lower)">85mm f1.8 (or lower)</option>
+                                <option value="85mm f1.8 (or lower)">85mm f1.8 (or lower)</option>
+                                <option value="70-200mm (f4) or lower)">70-200mm (f4) or lower)</option>
+                                <option value="18-105mm f4 (or lower)">18-105mm f4 (or lower)</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-sm-12">
+                        <div class="form-group">
+                             <button type="submit" class="btn btn-primary"><i class="fe fe-plus mr-2"></i>Submit</button>
+                        </div>
+                    </div>
+
+                   </div>
+                </form>
+                </div>
+            </div>
+
+
+        </div>
+         </div>
+
+
+
+</div>
+@endif
+@if(Auth::user()->is_complete == 'yes')
+
+<div class="section-body mt-3">
+   <div class="container-fluid">
+   <div class="row clearfix">
+
+
+       <div class="card">
+           <div class="card-header">
+           <h3 class="card-title">@if(isset($pos)){{ $pos }}@endif</h3>
+           <div class="card-options">
+           <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+
+
+           <div class="item-action dropdown ml-2">
+
+           <div class="dropdown-menu dropdown-menu-right">
+
+           <div class="dropdown-divider"></div>
+
+
+           </div>
+           </div>
+           </div>
+            </div>
+           <div class="card-body">
+           <div class="row">
+
+
+
+
+       </div>
+       </div>
+       </div>
+       <div class="col-12 col-sm-12">
+           <div class="card">
+            <div class="card-header">
+           <h3 class="card-title">Project Summary</h3>
+           </div>
+           <div class="card-body">
+           <div class="table-responsive">
+           <table class="table table-hover table-striped text-nowrap table-vcenter mb-0">
+           <thead>
+           <tr>
+           <th>#</th>
+           <th>Client Name</th>
+           <th>Project</th>
+           <th>Project Cost</th>
+           <th>Payment</th>
+           <th>Status</th>
+           </tr>
+           </thead>
+           <tbody>
+           <tr>
+           <td>#AD1245</td>
+           <td>Sean Black</td>
+           <td>Angular Admin</td>
+           <td>$14,500</td>
+           <td>$14,500</td>
+
+           <td><span class="badge badge-danger">Delivered</td>
+           </tr>
+
+           </tbody>
+           </table>
+           </div>
+           </div>
+           </div>
+           </div>
+           </div>
+
+@endif
+@endif
 @if(Auth::user()->post == 'videographer')
  @if(Auth::user()->is_complete == 'No')
 <div class="grid lg:grid-cols-3 mt-12 gap-8  " >

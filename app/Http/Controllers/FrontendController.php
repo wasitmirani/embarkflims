@@ -14,4 +14,9 @@ class FrontendController extends Controller
         return view('frontend.auth.login');
     }
 
+
+    public function showRegister(){
+        return view('frontend.auth.register');
+    }
+
 }

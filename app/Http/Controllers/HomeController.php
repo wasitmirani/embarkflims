@@ -30,49 +30,49 @@ class HomeController extends Controller
     {
 
         $equipments = Equipment::all();
-        $pos = '';
+        $pos = UserDetail::getPosition();
         $position = '';
 
-     
 
-        if(Auth::user()->is_complete == 'yes'){
+
+    //     if(Auth::user()->is_complete == 'yes'){
 
         $position = UserDetail::where('user_id',Auth::user()->id)->first();
-        if(isset($position->completion_time)){
-            if($position->completion_time == '30 days'){
+    //     if(isset($position->completion_time)){
+    //         if($position->completion_time == '30 days'){
 
-                $pos = 'Advance Editor: $350';
+    //             $pos = 'Advance Editor: $350';
 
-            }
-            if($position->completion_time == '60 days'){
+    //         }
+    //         if($position->completion_time == '60 days'){
 
-                $pos = 'Basic Editor: $350';
+    //             $pos = 'Basic Editor: $350';
 
-            }
+    //         }
 
-        }
+    //     }
 
-        if(isset($position->no_cameras)){
-            if($position->no_cameras == '1'){
+    //     if(isset($position->no_cameras)){
+    //         if($position->no_cameras == '1'){
 
-                $pos = 'Asistant Videographer';
+    //             $pos = 'Asistant Videographer';
 
-            }
-            if($position->no_cameras == '2'){
+    //         }
+    //         if($position->no_cameras == '2'){
 
-                $pos = 'Videographer';
+    //             $pos = 'Videographer';
 
-            }
-            if($position->no_cameras == '3'){
+    //         }
+    //         if($position->no_cameras == '3'){
 
-                $pos = 'Cinametographer';
+    //             $pos = 'Cinametographer';
 
-            }
+    //         }
 
-        }
+    //     }
 
 
-    }
+    // }
 
 
 
@@ -93,46 +93,43 @@ class HomeController extends Controller
     }
 
     public function profile(){
+
         $equipments = Equipment::all();
         $position = UserDetail::with('equipments')->where('user_id',Auth::user()->id)->first();
 
 
-        $pos = '';
-        if(isset($position->completion_time)){
-            if($position->completion_time == '30 days'){
+        $pos = UserDetail::getPosition();
+        // if(isset($position->completion_time)){
+        //     if($position->completion_time == '30 days'){
 
-                $pos = 'Advance Editor: $350';
+        //         $pos = 'Advance Editor: $350';
 
-            }
-            if($position->completion_time == '60 days'){
+        //     }
+        //     if($position->completion_time == '60 days'){
 
-                $pos = 'Basic Editor: $350';
+        //         $pos = 'Basic Editor: $350';
 
-            }
+        //     }
 
-        }
-        if(isset($position->no_cameras)){
-            if($position->no_cameras == '1'){
+        // }
+        // if(isset($position->no_cameras)){
+        //     if($position->no_cameras == '1'){
 
-                $pos = 'Asistant Videographer';
+        //         $pos = 'Asistant Videographer';
 
-            }
-            if($position->no_cameras == '2'){
+        //     }
+        //     if($position->no_cameras == '2'){
 
-                $pos = 'Videographer';
+        //         $pos = 'Videographer';
 
-            }
-            if($position->no_cameras == '3'){
+        //     }
+        //     if($position->no_cameras == '3'){
 
-                $pos = 'Cinametographer';
+        //         $pos = 'Cinametographer';
 
-            }
+        //     }
 
-        }
-
-
-
-
-        return view('frontend.profile',compact('pos','position','equipments'));
+        // }
+      return view('frontend.profile',compact('pos','position','equipments'));
     }
 }

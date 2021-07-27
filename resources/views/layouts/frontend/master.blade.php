@@ -6,31 +6,34 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.css">
 		<!-- <link rel="stylesheet" href="assets/css/all.min.css"> -->
-		<link rel="stylesheet" href="assets/css/style.css">
-		<link rel="stylesheet" href="assets/css/fancybox.css">
-		<link rel="stylesheet" href="assets/css/slick.min.css">
-		<link rel="stylesheet" href="assets/css/slick-theme.css">
+		<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+		<link rel="stylesheet" href="{{ asset('assets/css/fancybox.css') }}">
+		<link rel="stylesheet" href="{{ asset('assets/css/slick.min.css') }}">
+		<link rel="stylesheet" href="{{ asset('assets/css/slick-theme.css') }}">
 		<link rel="stylesheet" href="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.css">
 		<title>Embark Films</title>
-	</head>
+        @yield('style')
+    </head>
+
 	<body>
 		<!-- Header -->
 		<header data-aos="flip-down" data-aos-duration="2000">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6">
-						<div class="logo"><img src="assets/images/logo.png" class="img-fluid" alt=""></div>
+						<div class="logo"><img src="{{ asset('assets/images/logo.png') }}" class="img-fluid" alt=""></div>
 					</div>
 					<div class="col-lg-6 dis-flex-end">
 						<ul class="list-unstyled m-0">
                             @guest
                             @if (Route::has('login'))
-							<li class="list-inline-item"><a href="{{route('show.login')}}" class="btn btn-business">Client/Freelancer Login</a></li>
+							<li class="list-inline-item"><a href="{{route('show.login')}}" class="btn btn-business">Login</a></li>
+                            <li class="list-inline-item"><a href="{{route('show.register')}}" class="btn btn-business">SignUp</a></li>
                             @endif
                             @else
                             <li class="list-inline-item"><a href="{{ route('freelancer.index') }}" class="btn btn-business">{{ Auth::user()->name }}</a></li>
@@ -93,13 +96,13 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" ></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js" ></script>
 		<!-- <script src="assets/js/slim.min.js" ></script> -->
-		<script src="assets/js/custom.js"></script>
-		<script src="assets/js/fancybox.js"></script>
-		<script src="assets/js/bootstrap.bundle.min.js"></script>
+		<script src="{{ asset('assets/js/custom.js') }}"></script>
+		<script src="{{ asset('assets/js/fancybox.js') }}"></script>
+		<script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
 		<!-- Option 2: jQuery, Popper.js, and Bootstrap JS -->
-		<script src="assets/js/popper.min.js"></script>
-		<script src="assets/js/bootstrap.min.js"></script>
-		<script src="assets/js/slick.min.js"></script>
+		<script src="{{ asset('assets/js/popper.min.js') }}"></script>
+		<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+		<script src="{{ asset('assets/js/slick.min.js') }}"></script>
 		<script src="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.js" ></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		    <script>

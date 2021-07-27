@@ -294,32 +294,32 @@ class FreelancerController extends Controller
             ]);
             $equipments = Equipment::all();
             $position = UserDetail::with('equipments')->where('user_id',Auth::user()->id)->first();
-            $pos = '';
-            if($position->completion_time == '30 days'){
+            $pos = UserDetail::getPosition();
+            // if($position->completion_time == '30 days'){
 
-                $pos = 'Advance Editor: $350';
+            //     $pos = 'Advance Editor: $350';
 
-            }
-            if($position->completion_time == '60 days'){
+            // }
+            // if($position->completion_time == '60 days'){
 
-                $pos = 'Basic Editor: $350';
+            //     $pos = 'Basic Editor: $350';
 
-            }
-            if($position->no_cameras == '1'){
+            // }
+            // if($position->no_cameras == '1'){
 
-                $pos = 'Asistant Videographer';
+            //     $pos = 'Asistant Videographer';
 
-            }
-            if($position->no_cameras == '2'){
+            // }
+            // if($position->no_cameras == '2'){
 
-                $pos = 'Videographer';
+            //     $pos = 'Videographer';
 
-            }
-            if($position->no_cameras == '3'){
+            // }
+            // if($position->no_cameras == '3'){
 
-                $pos = 'Cinametographer';
+            //     $pos = 'Cinametographer';
 
-            }
+            // }
 
 
             return view('frontend.profile',compact('pos','position','equipments'));

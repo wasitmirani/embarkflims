@@ -15,7 +15,8 @@ class UserDetail extends Model
         return $this->belongsToMany(Equipment::class,'equipment_user_detail');
     }
 
-    public function getPosition(){
+    public static function getPosition(){
+        $pos = "";
         if(Auth::user()->is_complete == 'yes'){
             $position = UserDetail::where('user_id',Auth::user()->id)->first();
 
@@ -27,7 +28,7 @@ class UserDetail extends Model
                 }
                 if($position->completion_time == '60 days'){
 
-                    $pos = 'Basic Editor: $350';
+                   $pos = 'Basic Editor: $350';
 
                 }
 
@@ -52,7 +53,7 @@ class UserDetail extends Model
             }
 
         }
-
+           return $pos;
 
 
 

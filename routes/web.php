@@ -30,6 +30,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::prefix('freelancer')->group(function () {
     Route::get('login',[FrontendController::class,'showLogin'])->name('show.login');
+    Route::get('register',[FrontendController::class,'showRegister'])->name('show.register');
 
 });
 
