@@ -121,32 +121,8 @@
    <div class="row clearfix">
 
 
-       <div class="card">
-           <div class="card-header">
-           <h3 class="card-title">@if(isset($pos)){{ $pos }}@endif</h3>
-           <div class="card-options">
-           <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
 
-
-           <div class="item-action dropdown ml-2">
-
-           <div class="dropdown-menu dropdown-menu-right">
-
-           <div class="dropdown-divider"></div>
-
-
-           </div>
-           </div>
-           </div>
-            </div>
-           <div class="card-body">
-           <div class="row">
-
-
-
-
-       </div>
-       </div>
+    </div>
        </div>
        <div class="col-12 col-sm-12">
            <div class="card">
@@ -289,36 +265,122 @@
 
  <div class="section-body mt-3">
     <div class="container-fluid">
-    <div class="row clearfix">
+      <div class="row clearfix">
+        <div class="col-6 col-md-4 col-xl-3">
+            <div class="card">
+            <div class="card-body ribbon">
+            <div class="ribbon-box green">5</div>
+            <a href="hr-users.html" class="my_sort_cut text-muted">
+            <i class="icon-users"></i>
+            <span>Active Projects</span>
+            </a>
+            </div>
+            </div>
+            </div>
+            <div class="col-6 col-md-4 col-xl-3">
+                <div class="card">
+                <div class="card-body ribbon">
+                <div class="ribbon-box green">5</div>
+                <a href="hr-users.html" class="my_sort_cut text-muted">
+                <i class="icon-users"></i>
+                <span>Recommended Projected</span>
+                </a>
+                </div>
+                </div>
+                </div>
+                <div class="col-6 col-md-4 col-xl-3">
+                    <div class="card">
+                    <div class="card-body ribbon">
+                    <div class="ribbon-box green">5</div>
+                    <a href="hr-users.html" class="my_sort_cut text-muted">
+                    <i class="icon-users"></i>
+                    <span>Clients</span>
+                    </a>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-xl-3">
+                        <div class="card">
+                        <div class="card-body ribbon">
+                        <div class="ribbon-box green">5</div>
+                        <a href="hr-users.html" class="my_sort_cut text-muted">
+                        <i class="icon-users"></i>
+                        <span>Delivered Projects</span>
+                        </a>
+                        </div>
+                        </div>
+                        </div>
 
 
+      </div>
+      <div class="row clearfix row-deck">
+        <div class="col-xl-6 col-lg-12 col-md-12">
         <div class="card">
-            <div class="card-header">
-            <h3 class="card-title">@if(isset($pos)){{ $pos }}@endif</h3>
-            <div class="card-options">
-            <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
-
-
-            <div class="item-action dropdown ml-2">
-
-            <div class="dropdown-menu dropdown-menu-right">
-
-            <div class="dropdown-divider"></div>
-
-
-            </div>
-            </div>
-            </div>
-             </div>
-            <div class="card-body">
-            <div class="row">
-
-
-
-
+        <div class="card-header">
+        <h3 class="card-title">Salary Statistics</h3>
+        <div class="card-options">
+        <label class="custom-switch m-0">
+        <input type="checkbox" value="1" class="custom-switch-input" checked="">
+        <span class="custom-switch-indicator"></span>
+        </label>
+        </div>
+        </div>
+        <div class="card-body">
+        <div id="chart-bar" style="height: 350px"></div>
+        </div>
+        <div class="card-footer">
+        <div class="d-flex justify-content-between align-items-center">
+        <a href="javascript:void(0)" class="btn btn-info btn-sm w200 mr-3">Generate Report</a>
+        <small>Measure How Fast You’re Growing Monthly Recurring Revenue. <a href="#">Learn More</a></small>
         </div>
         </div>
         </div>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-md-6">
+        <div class="card">
+        <div class="card-header">
+        <h3 class="card-title">Revenue</h3>
+        </div>
+        <div class="card-body text-center">
+        <div class="mt-4">
+        <input type="text" class="knob" value="82" data-width="147" data-height="147" data-thickness="0.07" data-bgcolor="#3f454a" data-fgcolor="#fed284">
+        </div>
+        <h3 class="mb-0 mt-3 font300"><span class="counter">1,24,301</span> <span class="text-green font-15">+3.7%</span></h3>
+        <small>Lorem Ipsum is simply dummy text <br> <a href="#">Read more</a> </small>
+        <div class="mt-4">
+
+        </div>
+        </div>
+        <div class="card-footer">
+        <a href="javascript:void(0)" class="btn btn-block btn-success btn-sm">Send Report</a>
+        </div>
+        </div>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-md-6">
+        <div class="card">
+        <div class="card-header">
+        <h3 class="card-title">My Balance</h3>
+        </div>
+        <div class="card-body">
+        <span>Balance</span>
+        <h4>$<span class="counter">20,508</span></h4>
+        <div id="apexspark1" class="mb-4"></div>
+        <div class="form-group">
+        <label class="d-block">Total Earning<span class="float-right">$<span class="counter">15,025</span></span></label>
+        <div class="progress progress-xs">
+        <div class="progress-bar bg-azure" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100" style="width: 77%;"></div>
+        </div>
+        </div>
+
+
+        </div>
+        <div class="card-footer">
+        <a href="javascript:void(0)" class="btn btn-block btn-info btn-sm">View More</a>
+        </div>
+        </div>
+        </div>
+        </div>
+    </div>
         <div class="col-12 col-sm-12">
             <div class="card">
              <div class="card-header">
@@ -334,6 +396,7 @@
             <th>Project</th>
             <th>Project Cost</th>
             <th>Payment</th>
+            <th>Client</th>
             <th>Status</th>
             </tr>
             </thead>
@@ -343,8 +406,16 @@
             <td>Sean Black</td>
             <td>Angular Admin</td>
             <td>$14,500</td>
-            <td>$14,500</td>
 
+            <td>$14,500</td>
+<td>
+<ul class="list-unstyled team-info sm margin-0 w150">
+<li><img src="../assets/images/xs/avatar1.jpg" alt="Avatar"></li>
+
+
+
+</ul>
+</td>
             <td><span class="badge badge-danger">Delivered</td>
             </tr>
 
@@ -435,100 +506,169 @@
 </div>
 @endif
 @if(Auth::user()->is_complete == 'yes')
-<div class="section-body mt-3">
+ <div class="section-body mt-3">
     <div class="container-fluid">
-       <div class="row clearfix">
-        <div class="card">
-            <div class="card-header">
-            <h3 class="card-title">Position Based On Answers: <strong>@if(isset($pos)){{ $pos }}@endif</strong></h3>
-            <div class="card-options">
-            <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+      <div class="row clearfix">
+        <div class="col-6 col-md-4 col-xl-3">
+            <div class="card">
+            <div class="card-body ribbon">
+            <div class="ribbon-box green">5</div>
+            <a href="hr-users.html" class="my_sort_cut text-muted">
+            <i class="icon-users"></i>
+            <span>Active Projects</span>
+            </a>
+            </div>
+            </div>
+            </div>
+            <div class="col-6 col-md-4 col-xl-3">
+                <div class="card">
+                <div class="card-body ribbon">
+                <div class="ribbon-box green">5</div>
+                <a href="hr-users.html" class="my_sort_cut text-muted">
+                <i class="icon-users"></i>
+                <span>Recommended Projected</span>
+                </a>
+                </div>
+                </div>
+                </div>
+                <div class="col-6 col-md-4 col-xl-3">
+                    <div class="card">
+                    <div class="card-body ribbon">
+                    <div class="ribbon-box green">5</div>
+                    <a href="hr-users.html" class="my_sort_cut text-muted">
+                    <i class="icon-users"></i>
+                    <span>Clients</span>
+                    </a>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-xl-3">
+                        <div class="card">
+                        <div class="card-body ribbon">
+                        <div class="ribbon-box green">5</div>
+                        <a href="hr-users.html" class="my_sort_cut text-muted">
+                        <i class="icon-users"></i>
+                        <span>Delivered Projects</span>
+                        </a>
+                        </div>
+                        </div>
+                        </div>
 
 
-            </div>
-             </div>
-            <div class="card-body">
-            <div class="row">
-            <div class="col-lg-4 col-md-4">
-            <div class="card">
-            <div class="card-body currency_state">
-            <div class="icon"><i class="fa fa-video-camera" aria-hidden="true"></i></div>
-            <div class="content">
-            <div class="text">Editing Software</div>
-            <h5 class="number">{{ $position->editing_software }}</h5>
-            </div>
-            </div>
-            </div>
-            </div>
-            <div class="col-lg-4 col-md-4">
-            <div class="card">
-            <div class="card-body currency_state">
-            <div class="icon"><i class="fa fa-clone" aria-hidden="true"></i></div>
-            <div class="content">
-            <div class="text">Grading Experience</div>
-            <h5 class="number">{{ $position->grading_experience }}</h5>
-            </div>
-            </div>
-            </div>
-            </div>
-            <div class="col-lg-4 col-md-4">
-            <div class="card">
-            <div class="card-body currency_state">
-            <div class="icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-            <div class="content">
-            <div class="text">Completion Time</div>
-            <h5 class="number">{{ $position->completion_time }}</h5>
-            </div>
-            </div>
-            </div>
-            </div>
-            </div>
-            <div id="User_Statistics" style="height: 290px"></div>
-            </div>
-            </div>
-       </div>
-    </div>
-</div>
-    <div class="col-12 col-sm-12">
+      </div>
+      <div class="row clearfix row-deck">
+        <div class="col-xl-6 col-lg-12 col-md-12">
         <div class="card">
-         <div class="card-header">
-        <h3 class="card-title">Project Summary</h3>
+        <div class="card-header">
+        <h3 class="card-title">Project Statistics</h3>
+        <div class="card-options">
+        <label class="custom-switch m-0">
+        <input type="checkbox" value="1" class="custom-switch-input" checked="">
+        <span class="custom-switch-indicator"></span>
+        </label>
+        </div>
         </div>
         <div class="card-body">
-        <div class="table-responsive">
-        <table class="table table-hover table-striped text-nowrap table-vcenter mb-0">
-        <thead>
-        <tr>
-        <th>#</th>
-        <th>Client Name</th>
-
-        <th>Project</th>
-        <th>Project Cost</th>
-        <th>Payment</th>
-        <th>Status</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-        <td>#AD1245</td>
-        <td>Sean Black</td>
-
-        <td>Angular Admin</td>
-        <td>$14,500</td>
-        <td>Done</td>
-        <td><span class="tag tag-success">Delivered</span></td>
-        </tr>
-
-
-
-        </tbody>
-        </table>
+        <div id="chart-bar" style="height: 350px"></div>
+        </div>
+        <div class="card-footer">
+        <div class="d-flex justify-content-between align-items-center">
+        <a href="javascript:void(0)" class="btn btn-info btn-sm w200 mr-3">Generate Report</a>
+        <small>Measure How Fast You’re Growing Monthly Recurring Revenue. <a href="#">Learn More</a></small>
         </div>
         </div>
         </div>
         </div>
-</div>
+        <div class="col-xl-3 col-lg-6 col-md-6">
+        <div class="card">
+        <div class="card-header">
+        <h3 class="card-title">Revenue</h3>
+        </div>
+        <div class="card-body text-center">
+        <div class="mt-4">
+        <input type="text" class="knob" value="82" data-width="147" data-height="147" data-thickness="0.07" data-bgcolor="#3f454a" data-fgcolor="#fed284">
+        </div>
+        <h3 class="mb-0 mt-3 font300"><span class="counter">1,24,301</span> <span class="text-green font-15">+3.7%</span></h3>
+        <small>Lorem Ipsum is simply dummy text <br> <a href="#">Read more</a> </small>
+        <div class="mt-4">
 
+        </div>
+        </div>
+        <div class="card-footer">
+        <a href="javascript:void(0)" class="btn btn-block btn-success btn-sm">Send Report</a>
+        </div>
+        </div>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-md-6">
+        <div class="card">
+        <div class="card-header">
+        <h3 class="card-title">My Balance</h3>
+        </div>
+        <div class="card-body">
+        <span>Balance</span>
+        <h4>$<span class="counter">20,508</span></h4>
+        <div id="apexspark1" class="mb-4"></div>
+        <div class="form-group">
+        <label class="d-block">Total Earning<span class="float-right">$<span class="counter">15,025</span></span></label>
+        <div class="progress progress-xs">
+        <div class="progress-bar bg-azure" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100" style="width: 77%;"></div>
+        </div>
+        </div>
+
+
+        </div>
+        <div class="card-footer">
+        <a href="javascript:void(0)" class="btn btn-block btn-info btn-sm">View More</a>
+        </div>
+        </div>
+        </div>
+        </div>
+    </div>
+        <div class="col-12 col-sm-12">
+            <div class="card">
+             <div class="card-header">
+            <h3 class="card-title">Project Summary</h3>
+            </div>
+            <div class="card-body">
+            <div class="table-responsive">
+            <table class="table table-hover table-striped text-nowrap table-vcenter mb-0">
+            <thead>
+            <tr>
+            <th>#</th>
+            <th>Client Name</th>
+            <th>Project</th>
+            <th>Project Cost</th>
+            <th>Payment</th>
+            <th>Client</th>
+            <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>#AD1245</td>
+            <td>Sean Black</td>
+            <td>Angular Admin</td>
+            <td>$14,500</td>
+
+            <td>$14,500</td>
+<td>
+<ul class="list-unstyled team-info sm margin-0 w150">
+<li><img src="../assets/images/xs/avatar1.jpg" alt="Avatar"></li>
+
+
+
+</ul>
+</td>
+            <td><span class="badge badge-danger">Delivered</td>
+            </tr>
+
+            </tbody>
+            </table>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
 
 @endif
 @endif

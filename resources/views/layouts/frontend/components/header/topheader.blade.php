@@ -5,7 +5,7 @@
         @can('isCustomer')
         <h1 class="page-title">Customer Dashboard </h1>
         @elsecan('isFreelancer')
-        <h1 class="page-title">Freelancer Dashboard ({{ Auth::user()->post }})</h1>
+        <h1 class="page-title">Hi! {{ Auth::user()->name }}</h1>
         @endcan
 
 

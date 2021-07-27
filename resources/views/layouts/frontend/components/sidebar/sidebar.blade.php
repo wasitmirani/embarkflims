@@ -7,13 +7,13 @@
     <a href="javascript:void(0)" class="has-arrow arrow-c"><i class="icon-rocket"></i><span>Dashboard</span></a>
     <ul aria-expanded="true" class="collapse in">
         @can('isCustomer')
-    <li class="active"><a href="index.html"><span>Dashboard</span></a></li>
-    <li><a href="hr-users.html"><span>Gigs</span></a></li>
+    <li class="active"><a href="index.html"><span>Content</span></a></li>
+
 
     @elsecan('isFreelancer')
-    <li class=""><a href="{{ route('home') }}"><span>Dashboard</span></a></li>
-    <li class=""><a href="{{ route('freelancer.projects') }}"><span>Asigned Profjects</span></a></li>
-    <li class=""><a href="{{ route('recomended.projects') }}"><span>Recomended Profjects</span></a></li>
+    <li class=""><a href="{{ route('home') }}"><span>Content</span></a></li>
+    <li class=""><a href="{{ route('freelancer.projects') }}"><span>Asigned Projects</span></a></li>
+    <li class=""><a href="{{ route('recomended.projects') }}"><span>Recomended Projects</span></a></li>
     <li class=""><a href="#"><span>Clients</span></a></li>
     <li><a href="{{ route('checkout') }}"><span>Wallet</span></a></li>
 
