@@ -278,17 +278,7 @@
                 $('.showStatus').html(status)
             }
 
-            $.ajax({
-                url : '/change/status',
-                type: 'POST',
-                data:{_token:"{{ csrf_token() }}"},
-                success:function(msg){
-
-                    $('.showStatus').html(msg)
-
-                }
-            })
-
+          
 
         })
 

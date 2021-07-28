@@ -506,6 +506,7 @@
 </div>
 @endif
 @if(Auth::user()->is_complete == 'yes')
+
  <div class="section-body mt-3">
     <div class="container-fluid">
       <div class="row clearfix">

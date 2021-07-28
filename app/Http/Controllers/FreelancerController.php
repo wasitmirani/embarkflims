@@ -355,15 +355,6 @@ $detail->equipments()->update($event, ['equipment_id' => $request->equipment]);
 
     }
 
-    public function changeStatus(Request $request){
-
-       $status = Project::where('user_id',18)->update([
-            'project_status' => 1
-        ]);
-
-        return response()->json('active');
-
-    }
 
     public function client(){
 

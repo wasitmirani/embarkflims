@@ -11,11 +11,11 @@
 
 
     @elsecan('isFreelancer')
-    <li class=""><a href="{{ route('home') }}"><span>Content</span></a></li>
-    <li class=""><a href="{{ route('freelancer.projects') }}"><span>Asigned Projects</span></a></li>
-    <li class=""><a href="{{ route('recomended.projects') }}"><span>Recomended Projects</span></a></li>
-    <li class=""><a href="{{ route('freelancer.clients') }}"><span>Clients</span></a></li>
-    <li><a href="{{ route('checkout') }}"><span>Wallet</span></a></li>
+    <li class="{{ Route::currentRouteNamed('home') ? 'active' : '' }}"><a  href="{{ route('home') }}"><span>Content</span></a></li>
+    <li class="{{ Route::currentRouteNamed('freelancer.projects') ? 'active' : '' }}"><a  href="{{ route('freelancer.projects') }}"><span>Asigned Projects</span></a></li>
+    <li class="{{ Route::currentRouteNamed('recomended.projects') ? 'active' : '' }}"><a  href="{{ route('recomended.projects') }}"><span>Recomended Projects</span></a></li>
+    <li class="{{ Route::currentRouteNamed('freelancer.clients') ? 'active' : '' }}"><a  href="{{ route('freelancer.clients') }}"><span>Clients</span></a></li>
+    <li class="{{ Route::currentRouteNamed('checkout') ? 'active' : '' }}"><a  href="{{ route('checkout') }}"><span>Wallet</span></a></li>
 
     @endcan
 
@@ -25,8 +25,8 @@
     <li>
     <a href="javascript:void(0)" class="has-arrow arrow-c"><i class="icon-briefcase"></i><span>Profile</span></a>
     <ul aria-expanded="false" class="collapse">
-    <li><a href="{{ route('profile.setting.form') }}"><span>Account Settings</span></a></li>
-    <li><a href="{{ route('edit.profile') }}"><span>Edit Profile</span></a></li>
+    <li class="{{ Route::currentRouteNamed('profile.setting.form') ? 'active' : '' }}"><a  href="{{ route('profile.setting.form') }}"><span>Account Settings</span></a></li>
+    <li class="{{ Route::currentRouteNamed('edit.profile') ? 'active' : '' }}"><a  href="{{ route('edit.profile') }}"><span>Edit Profile</span></a></li>
 
     </ul>
     </li>

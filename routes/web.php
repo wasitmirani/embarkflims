@@ -47,7 +47,7 @@ Route::middleware('auth')->group(function(){
     Route::get('/projects',[FreelancerController::class,'assignedProject'])->name('freelancer.projects');
     Route::get('/clients',[FreelancerController::class,'client'])->name('freelancer.clients');
     Route::get('/recomended/projects',[FreelancerController::class,'recomendedProject'])->name('recomended.projects');
-    Route::post('/change/status',[FreelancerController::class,'changeStatus']);
+
 });
 
 
