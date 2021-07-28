@@ -135,11 +135,9 @@
             <select class="form-control js-example-responsive"  multiple="multiple" name="equipment[]">
 
 
-                   @foreach($position->equipments as $equips )
-                    @php $equips = $equips->toArray() @endphp
-                    @endforeach
+
                    @foreach($equipments as $equipment)
-                   <option {{ in_array($equipment->equipment, $equips) ? 'selected' : ''}} value="{{ $equipment->id }}">{{ $equipment->equipment }}</option>
+                   <option  value="{{ $equipment->id }}">{{ $equipment->equipment }}</option>
                 @endforeach
 
 

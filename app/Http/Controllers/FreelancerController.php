@@ -226,6 +226,8 @@ class FreelancerController extends Controller
         $profile_updated = $detail->save();
         if($profile_updated){
             $detail->equipments()->attach($request->equipment,['created_at'=>now(), 'updated_at'=>now()]);
+
+            // $detail->equipments()->updateExistingPivot(Auth::user()->id,$request->equipment);
         //     $event = $detail->equipments()->first();
         //    $event->update($request->equipment);
             User::where('id',Auth::user()->id)->update([
