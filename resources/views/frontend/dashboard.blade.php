@@ -283,7 +283,7 @@
                 <div class="ribbon-box green">5</div>
                 <a href="hr-users.html" class="my_sort_cut text-muted">
                 <i class="icon-action-redo"></i>
-                <span>Recommended Projected</span>
+                <span>Recommended Projects</span>
                 </a>
                 </div>
                 </div>
@@ -527,7 +527,7 @@
                 <div class="ribbon-box green">5</div>
                 <a href="hr-users.html" class="my_sort_cut text-muted">
                 <i class="icon-users"></i>
-                <span>Recommended Projected</span>
+                <span>Recommended Projects</span>
                 </a>
                 </div>
                 </div>
